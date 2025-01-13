@@ -1,8 +1,18 @@
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
+
+
+    const links = <>
+        <li className="mr-2">Item 1</li>
+        <li className="mr-2">Item 2</li>
+        <li className="mr-2">Item 3</li>
+        <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700">Join as Developer</a>
+    </>
+
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-lime-200">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -22,36 +32,19 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <h3 className="font-bold text-xl pl-4">PaidWork</h3>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
+     {links}
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end flex gap-2">
+  <Link to="/login"><button className="btn btn-warning">Login</button></Link>
+  <button className="btn btn-warning">Register</button>
   </div>
 </div>
     );
