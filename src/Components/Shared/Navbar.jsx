@@ -1,18 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 
 const Navbar = () => {
 
+  const {user,userLogout} = useAuth();
+
+  const handleLogout = () => {
+    userLogout()
+    .then(()=>{
+      toast.success('Logout successfully')
+    })
+  }
 
     const links = <>
-        <li className="mr-2">Item 1</li>
-        <li className="mr-2">Item 2</li>
-        <li className="mr-2">Item 3</li>
-        <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700">Join as Developer</a>
+        <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2">Join as Developer</a>
+        {
+          user && <>
+          <NavLink to="dashboard" className="mr-2">Dashboard</NavLink>
+          <NavLink>Available Coin</NavLink>
+          </>
+        }
     </>
 
     return (
-        <div className="navbar bg-lime-200">
+        <div className="navbar bg-lime-200 py-3">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,7 +48,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <h3 className="font-bold text-xl pl-4">PaidWork</h3>
+    <Link to="/"><button className="font-bold text-xl pl-4">PaidWork</button></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -43,8 +56,10 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end flex gap-2">
-  <Link to="/login"><button className="btn btn-warning">Login</button></Link>
-  <button className="btn btn-warning">Register</button>
+  {
+    user ? <div className="flex items-center gap-4"><img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" /> <button onClick={handleLogout} className="btn btn-warning">Logout</button></div> :<><Link to="/login"><button className="btn btn-warning">Login</button></Link>
+  <Link to="/register"><button className="btn btn-warning">Register</button></Link></>
+  }
   </div>
 </div>
     );

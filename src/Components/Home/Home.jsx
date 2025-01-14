@@ -1,9 +1,14 @@
+import Banner from "./Banner";
+import BestWorkers from "./BestWorkers";
+import Testimonial from "./Testimonial";
 
 
 const Home = () => {
     return (
         <div>
-            <h3>I m home</h3>
+           <Banner></Banner>
+           <BestWorkers></BestWorkers>
+           <Testimonial></Testimonial>
         </div>
     );
 };
