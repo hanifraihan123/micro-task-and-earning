@@ -1,19 +1,18 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Parallax, Pagination, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Parallax, Pagination, Navigation } from "swiper/modules";
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const Testimonial = () => {
-    return (
-        <div>
-            <h3 className="font-bold text-3xl text-center pb-6">Testimonial</h3>
-            <Swiper
+  return (
+    <div className="bg-green-200 pt-4">
+      <h3 className="font-bold text-3xl text-center pb-2">Testimonial</h3>
+      <Swiper
         style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
+          "--swiper-navigation-color": "blue",
+          "--swiper-pagination-color": "blue",
         }}
         speed={600}
         parallax={true}
@@ -24,24 +23,11 @@ const Testimonial = () => {
         modules={[Parallax, Pagination, Navigation]}
         className="mySwiper"
       >
-        <div
-          slot="container-start"
-          className="parallax-bg"
-          style={{
-            'background-image':
-              'url(https://swiperjs.com/demos/images/nature-1.jpg)',
-          }}
-          data-swiper-parallax="-23%"
-        ></div>
-        <SwiperSlide>
-          <div className="title" data-swiper-parallax="-300">
-            Slide 1
-          </div>
-          <div className="subtitle" data-swiper-parallax="-200">
-            Subtitle
-          </div>
-          <div className="text" data-swiper-parallax="-100">
-            <p>
+        <SwiperSlide className="py-6">
+          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Md Raihan</div>
+          <div className="subtitle pb-4" data-swiper-parallax="-200"><img className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/SwBcnbS/IMG-20211216-170815.jpg" alt="" /></div>
+          <div className="text px-16 pb-4" data-swiper-parallax="-100">
+            <p><span className="font-bold">Experiences: </span> 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
               laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
@@ -52,15 +38,11 @@ const Testimonial = () => {
             </p>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="title" data-swiper-parallax="-300">
-            Slide 2
-          </div>
-          <div className="subtitle" data-swiper-parallax="-200">
-            Subtitle
-          </div>
-          <div className="text" data-swiper-parallax="-100">
-            <p>
+        <SwiperSlide className="py-6">
+          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Md Raihan</div>
+          <div className="subtitle pb-4" data-swiper-parallax="-200"><img className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/SwBcnbS/IMG-20211216-170815.jpg" alt="" /></div>
+          <div className="text px-16 pb-4" data-swiper-parallax="-100">
+            <p><span className="font-bold">Experiences: </span> 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
               laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
@@ -71,15 +53,11 @@ const Testimonial = () => {
             </p>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="title" data-swiper-parallax="-300">
-            Slide 3
-          </div>
-          <div className="subtitle" data-swiper-parallax="-200">
-            Subtitle
-          </div>
-          <div className="text" data-swiper-parallax="-100">
-            <p>
+        <SwiperSlide className="py-6">
+          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Md Raihan</div>
+          <div className="subtitle pb-4" data-swiper-parallax="-200"><img className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/SwBcnbS/IMG-20211216-170815.jpg" alt="" /></div>
+          <div className="text px-16 pb-4" data-swiper-parallax="-100">
+            <p><span className="font-bold">Experiences: </span> 
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
               dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
               laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
@@ -90,9 +68,10 @@ const Testimonial = () => {
             </p>
           </div>
         </SwiperSlide>
+
       </Swiper>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Testimonial;
