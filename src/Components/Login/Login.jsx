@@ -1,6 +1,6 @@
 import Lottie from 'lottie-react';
 import login from '../../assets/login.json'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import useAuth from '../Hooks/useAuth';
 import toast from 'react-hot-toast';
@@ -10,12 +10,15 @@ const Login = () => {
 
   const {userLogin,logInWithGoogle} = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const axiosPublic = useAxios();
+  const from = location.state || "/"
   const { register, handleSubmit } = useForm()
       const onSubmit = (data) => {
         userLogin(data.email,data.password)
         .then(res=>{
           if(res.user){
+            navigate(from)
             toast.success('User Login Successfully')
           }
         })
@@ -28,7 +31,7 @@ const Login = () => {
         logInWithGoogle()
         .then( async(result) => {
           toast.success('User Login Successfully')
-          navigate('/')
+          navigate(from)
           const userInfo = {
             name: result.user.displayName,
             email: result.user.email,

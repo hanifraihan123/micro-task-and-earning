@@ -1,11 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
+import useRole from "../Hooks/useRole";
 
 
 const Navbar = () => {
 
   const {user,userLogout} = useAuth();
+  const {role} = useRole();
 
   const handleLogout = () => {
     userLogout()
@@ -19,7 +21,7 @@ const Navbar = () => {
         {
           user && <>
           <NavLink to="dashboard" className="mr-2">Dashboard</NavLink>
-          <NavLink>Available Coin</NavLink>
+          <NavLink>Available Coin: {role?.coin} </NavLink>
           </>
         }
     </>
