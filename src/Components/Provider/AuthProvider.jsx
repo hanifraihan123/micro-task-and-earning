@@ -45,14 +45,14 @@ const AuthProvider = ({children}) => {
                 const user = {email: currentUser.email}
                 axiosPublic.post('/jwt',user,{withCredentials: true})
                 .then(res=>{
-                    console.log('login-token',res.data)
+                    // console.log('login-token',res.data)
                     setLoading(false)
                 })
             }
             else{
                 axiosPublic.post('/logout',{},{withCredentials: true})
                 .then(res=>{
-                    console.log('logout', res.data)
+                    // console.log('logout', res.data)
                     setLoading(false)
                 })
             }

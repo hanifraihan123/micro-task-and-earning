@@ -31,6 +31,9 @@ const Register = () => {
               if(data.role === 'buyer'){
                 coin = 10 + 40
               }
+              if(data.role === 'worker'){
+                 coin = 10
+              }
               const userInfo = {
                 name: data.name,
                 email: data.email,

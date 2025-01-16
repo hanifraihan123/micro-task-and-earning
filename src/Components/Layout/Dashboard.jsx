@@ -19,11 +19,12 @@ const Dashboard = () => {
             <DasNavbar></DasNavbar>
          <div className="flex">
          <div className="w-1/6 min-h-screen bg-amber-200 text-center py-4"> 
+               <ul>
                {
                 role?.role === 'worker' && <> <NavLink to='/dashboard/workerHome'><p className="flex items-center gap-1 justify-center"><IoMdHome /> Home</p></NavLink>
-                <NavLink to='/'><p className="flex items-center gap-1 justify-center"><FaTasks /> TaskList</p></NavLink>
-                <NavLink to='/'><p className="flex items-center gap-1 justify-center"><FaFileUpload /> My Submissions</p></NavLink>
-                <NavLink to='/'><p className="flex items-center gap-1 justify-center"><BiMoneyWithdraw /> Withdrawals</p></NavLink></>
+                <NavLink to='/dashboard/taskList'><p className="flex items-center gap-1 justify-center"><FaTasks /> TaskList</p></NavLink>
+                <NavLink to='/dashboard/mySubmission'><p className="flex items-center gap-1 justify-center"><FaFileUpload /> My Submissions</p></NavLink>
+                <NavLink to='/dashboard/withdrawals'><p className="flex items-center gap-1 justify-center"><BiMoneyWithdraw /> Withdrawals</p></NavLink></>
                }
                {
                 role?.role === 'buyer' && <><NavLink to='/dashboard/buyerHome'><p className="flex items-center gap-1 justify-center"><IoMdHome /> Home</p></NavLink>
@@ -34,10 +35,11 @@ const Dashboard = () => {
                 <NavLink to='/dashboard/paymentHistory'><p className="flex items-center gap-1 justify-center"><FaSackDollar /> Payment History</p></NavLink></>
                }
                 {
-                    role?.role === 'admin' && <> <NavLink to='/dashboard/adminHome'><p className="flex items-center gap-1 justify-center"><IoMdHome /> Home</p></NavLink>
-                    <NavLink to='/dashboard/manageUsers'><p className="flex items-center gap-1 justify-center"><FaUsers /> Manage Users</p></NavLink>
-                <NavLink to='/'><p className="flex items-center gap-1 justify-center"><FaHistory /> Manage Task History</p></NavLink></>
+                    role?.role === 'admin' && <> <NavLink to='/dashboard/adminHome'><p className="flex items-center gap-1 justify-center"><IoMdHome></IoMdHome>Home</p></NavLink>
+                    <NavLink to='/dashboard/manageUsers'><p className="flex items-center gap-1 justify-center"><FaUsers></FaUsers>Manage Users</p></NavLink>
+                <NavLink to='/dashboard/taskHistory'><p className="flex items-center gap-1 justify-center"><FaHistory></FaHistory>Manage Task History</p></NavLink></>
                 }
+               </ul>
             </div>
             <div className="w-5/6">
                 <Outlet></Outlet>

@@ -11,6 +11,12 @@ import PaymentHistory from "../Dashboard/PaymentHistory";
 import BuyerHome from "../Dashboard/BuyerHome";
 import AdminHome from "../Dashboard/Admin/AdminHome";
 import ManageUsers from "../Dashboard/Admin/ManageUsers";
+import TaskHistory from "../Dashboard/Admin/TaskHistory";
+import WorkerHome from "../Dashboard/Worker/WorkerHome";
+import TaskList from "../Dashboard/Worker/TaskList";
+import MySubmission from "../Dashboard/Worker/MySubmission";
+import Withdrawals from "../Dashboard/Worker/Withdrawals";
+import TaskDetails from "../Dashboard/Worker/TaskDetails";
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +69,30 @@ export const router = createBrowserRouter([
           path: 'manageUsers',
           element: <ManageUsers></ManageUsers>
         },
+        {
+          path: 'taskHistory',
+          element: <TaskHistory></TaskHistory>
+        },
+        {
+          path: 'workerHome',
+          element: <WorkerHome></WorkerHome>
+        },
+        {
+          path: 'taskList',
+          element: <TaskList></TaskList>
+        },
+        {
+          path: 'taskDetails/:id',
+          element: <TaskDetails></TaskDetails>
+        },
+        {
+          path: 'mySubmission',
+          element: <MySubmission></MySubmission>
+        },
+        {
+          path: 'withdrawals',
+          element: <Withdrawals></Withdrawals>
+        }
       ]
     }
   ]);

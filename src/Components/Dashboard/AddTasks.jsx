@@ -32,7 +32,9 @@ const AddTasks = () => {
                 deadline: startDate,
                 info: data.info,
                 image: res.data.data.display_url,
-                email: user?.email
+                email: user?.email,
+                name: user?.displayName,
+                buyerPhoto: user?.photoURL
             }
             const taskInfo = await axiosSecure.post('/tasks',tasksData)
             if(taskInfo.data.insertedId){

@@ -9,18 +9,9 @@ const DasNavbar = () => {
     return (
         <div className="navbar bg-lime-200">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className='btn btn-warning'>
+            <div className='btn btn-warning'>
             <Link to="/"><button className="font-bold text-xl">PaidWork</button></Link>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li><a>Homepage</a></li>
-              <li><a>Portfolio</a></li>
-              <li><a>About</a></li>
-            </ul>
-          </div>
         </div>
         <div className="navbar-end flex gap-6 items-center font-bold">
          <div>
