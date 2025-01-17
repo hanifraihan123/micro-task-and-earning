@@ -3,12 +3,14 @@ import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { info } from "autoprefixer";
 
 const MyTasks = () => {
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const [task, setTask] = useState({});
-  const [info, setInfo] = useState("");
+  const [infos, setInfos] = useState("");
   const { data: tasks = [], refetch } = useQuery({
     queryKey: ["tasks"],
     queryFn: async () => {
@@ -17,9 +19,24 @@ const MyTasks = () => {
     },
   });
 
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const details = form.details.value;
+    const info = infos;
+    const updateInfo = {title,details,info};
+    const res = await axiosSecure.patch(`/task/${task._id}`, updateInfo)
+    if(res.data.modifiedCount > 0){
+      refetch();
+      toast.success('Task Info Updated Successfully')
+    }
+   }
+
   const handleUpdate = async (id) => {
     document.getElementById("submit_modal").showModal();
-    await axiosSecure.get(`/task/${id}`).then((res) => {
+    await axiosSecure.get(`/task/${id}`)
+    .then((res) => {
       setTask(res.data);
     });
   };
@@ -105,12 +122,12 @@ const MyTasks = () => {
       {/* Open the modal using document.getElementById('ID').showModal() method */}
       <dialog id="submit_modal" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-          <form className="card-body">
+          <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Title: </span>
               </label>
-              <input
+              <input name="title"
                 type="text"
                 defaultValue={task.title}
                 placeholder="Title"
@@ -121,7 +138,7 @@ const MyTasks = () => {
               <label className="label">
                 <span className="label-text">Task Details: </span>
               </label>
-              <input
+              <input name="details"
                 type="text"
                 defaultValue={task.details}
                 placeholder="Title"
@@ -134,7 +151,7 @@ const MyTasks = () => {
               </label>
               <select
                 defaultValue={task.info}
-                onChange={(e) => setInfo(e.target.value)}
+                onChange={(e) => setInfos(e.target.value)}
                 className="select select-bordered w-full"
               >
                  <option disabled>Select One</option>
@@ -143,6 +160,9 @@ const MyTasks = () => {
                 <option>Text</option>
               </select>
             </div>
+            <div className="form-control mt-2">
+          <button className="btn btn-primary">Update</button>
+        </div>
           </form>
           <div className="modal-action">
             <form method="dialog">
