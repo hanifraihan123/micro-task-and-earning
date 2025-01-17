@@ -24,6 +24,7 @@ const TaskDetails = () => {
         const submissionInfo = {
             taskId: task._id,
             taskTitle: task.title,
+            taskDetails: task.details,
             amount: task.amount,
             workerName: user?.displayName,
             workerEmail: user?.email,

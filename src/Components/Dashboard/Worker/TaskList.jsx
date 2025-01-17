@@ -3,7 +3,7 @@ import useTasks from "../../Hooks/useTasks";
 
 const TaskList = () => {
 
-    const [tasks,refetch] = useTasks();
+    const [tasks] = useTasks();
 
   return (
     <div>
