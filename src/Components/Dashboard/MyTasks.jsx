@@ -10,13 +10,13 @@ const MyTasks = () => {
   const [task, setTask] = useState({});
   const [infos, setInfos] = useState("");
   const { data: tasks = [], refetch } = useQuery({
-    queryKey: ["tasks"],
+    queryKey: ["tasks",user?.email],
     queryFn: async () => {
       const res = await axiosSecure.get(`/tasks/${user?.email}`);
       return res.data;
     },
+    enabled: !!user?.email
   });
-
   const handleSubmit = async(e) => {
     e.preventDefault();
     const form = e.target;

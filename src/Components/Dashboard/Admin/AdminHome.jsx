@@ -13,8 +13,27 @@ const AdminHome = () => {
             return res.data;
         }
     })
+    const {data: users = []} = useQuery({
+        queryKey: ['users'],
+        queryFn: async ()=>{
+            const res = await axiosSecure.get('/users')
+            return res.data
+        }
+    })
 
+    const {data: totalData = {}} = useQuery({
+        queryKey: ['totalData'],
+        queryFn: async ()=>{
+            const res = await axiosSecure.get('/countData')
+            return res.data
+        }
+    })
+
+    const totalCoin = users.reduce((total,user)=> total + user.coin,0)
+    
     const handlePayment = async(id) => {
+        const data = await axiosSecure.get(`/withdraw/${id}`)
+        const coin = data.data.withdrawal_coin;
         const updateStatus = {status: 'approved'}
         const res = await axiosSecure.patch(`/withdraw/${id}`, updateStatus)
         if(res.data.modifiedCount > 0){
@@ -25,6 +44,11 @@ const AdminHome = () => {
     return (
         <div>
              <h3 className="font-bold text-3xl text-center py-6">Withdraw Request</h3>
+             <div className="flex justify-between p-6 text-blue-500">
+             <p className="font-bold">Total Buyer: {totalData?.buyer}</p>
+             <p className="font-bold">Total Worker: {totalData?.worker}</p>
+             <p className="font-bold">Total Coin: {totalCoin}</p>
+             </div>
              <div className="overflow-x-auto">
   <table className="table">
     {/* head */}

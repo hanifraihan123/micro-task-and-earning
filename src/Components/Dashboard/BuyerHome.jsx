@@ -8,15 +8,27 @@ const BuyerHome = () => {
 
     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
-    const [submit,setSubmit] = useState()
-    const {data: tasks = []} = useQuery({
-        queryKey: ['tasks'],
+    const [subs,setSubs] = useState();
+    const {data: submits = []} = useQuery({
+        queryKey: ['submits',user?.email],
         queryFn: async()=>{
             const res = await axiosSecure.get(`/submits/${user?.email}`)
             return res.data
-        }
+        },
+        enabled: !!user?.email
     })
 
+    const {data: tasks = []} = useQuery({
+      queryKey: ['taskss',user?.email],
+      queryFn: async()=>{
+          const res = await axiosSecure.get(`/tasks/${user?.email}`)
+          return res.data
+      },
+      enabled: !!user?.email
+  })
+
+  const pendingTask = tasks.reduce((total,task)=>total + task.workers,0)
+ 
     const handleApprove = async(id) => {
       const updateStatus = {
         status: 'approved'
@@ -40,13 +52,16 @@ const BuyerHome = () => {
       document.getElementById('submit_modal').showModal()
       await axiosSecure.get(`/submit/${id}`)
       .then(res=>{
-        setSubmit(res.data)
+        setSubs(res.data)
       })
     }
 
     return (
-        <div>
-            <h3 className="font-bold text-3xl text-center py-6">Home</h3>
+        <div className="pt-6">
+           <div className="flex justify-between px-6 text-blue-500">
+           <p className="font-bold text-center">Total Task: {submits?.length}</p>
+           <p className="font-bold text-center">Required Workers: {pendingTask}</p>
+           </div>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
@@ -62,13 +77,13 @@ const BuyerHome = () => {
     </thead>
     <tbody>
       {
-        tasks.map((task,index)=><tr key={task._id} task={task}>
+        submits.map((submit,index)=><tr key={submit._id} submit={submit}>
             <th>{index + 1}</th>
-            <td>{task.workerName}</td>
-            <td>{task.taskTitle}</td>
-            <td>{task.amount}</td>
-            <td><button onClick={()=>handleSubmit(task._id)} className="btn btn-xs text-blue-500">View Submission</button></td>
-            <td><button onClick={()=>handleApprove(task._id)} className="btn btn-xs text-green-500 mr-2">Approve</button> <button onClick={()=>handleReject(task._id)} className="btn btn-xs text-red-500">Reject</button></td>
+            <td>{submit.workerName}</td>
+            <td>{submit.taskTitle}</td>
+            <td>{submit.amount}</td>
+            <td><button onClick={()=>handleSubmit(submit._id)} className="btn btn-xs text-blue-500">View Submission</button></td>
+            <td><button onClick={()=>handleApprove(submit._id)} className="btn btn-xs text-green-500 mr-2">Approve</button> <button onClick={()=>handleReject(submit._id)} className="btn btn-xs text-red-500">Reject</button></td>
           </tr>)
       }
       
@@ -79,7 +94,7 @@ const BuyerHome = () => {
 <dialog id="submit_modal" className="modal modal-bottom sm:modal-middle">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Sumission Details</h3>
-    {submit && <p className="py-4">{submit.submissionDetails}</p>}
+    {subs && <p className="py-4">{subs.submissionDetails}</p>}
     <div className="modal-action">
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}

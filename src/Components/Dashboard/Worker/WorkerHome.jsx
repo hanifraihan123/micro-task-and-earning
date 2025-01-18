@@ -17,12 +17,14 @@ const WorkerHome = () => {
     const actualData = submissions.filter(submit=>submit.status === 'approved')
     const pendingData = submissions.filter(submit=>submit.status === 'pending')
     const rejectedData = submissions.filter(submit=>submit.status === 'rejected')
+    const payableAmount = actualData.reduce((total,item)=> total + item.amount,0)
 
     return (
         <div>
             <h3 className="font-bold text-3xl text-center py-6">Total Submissions: {submissions?.length}</h3>
             <div className="flex gap-3 justify-between px-4 pb-4">
             <span className="font-bold text-xl text-center text-blue-500">Pending Submissions: {pendingData?.length}</span>
+            <span className="font-bold text-xl text-center text-yellow-500">Payable Amount: {payableAmount}</span>
             <span className="font-bold text-xl text-center text-red-500">Rejected Submissions: {rejectedData?.length}</span>
             <span className="font-bold text-xl text-center text-green-500">Approved Submissions: {actualData?.length}</span>
             </div>

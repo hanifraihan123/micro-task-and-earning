@@ -17,6 +17,7 @@ import TaskList from "../Dashboard/Worker/TaskList";
 import MySubmission from "../Dashboard/Worker/MySubmission";
 import Withdrawals from "../Dashboard/Worker/Withdrawals";
 import TaskDetails from "../Dashboard/Worker/TaskDetails";
+import Payment from "../Dashboard/Payment";
 
 export const router = createBrowserRouter([
     {
@@ -92,6 +93,10 @@ export const router = createBrowserRouter([
         {
           path: 'withdrawals',
           element: <Withdrawals></Withdrawals>
+        },
+        {
+          path: 'payment',
+          element: <Payment></Payment>
         }
       ]
     }

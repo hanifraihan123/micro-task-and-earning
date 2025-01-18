@@ -17,11 +17,11 @@ const Navbar = () => {
   }
 
     const links = <>
-        <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2">Join as Developer</a>
+        <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2 btn">Join as Developer</a>
         {
           user && <>
-          <NavLink to="dashboard" className="mr-2">Dashboard</NavLink>
-          <NavLink>Available Coin: {role?.coin} </NavLink>
+          <NavLink to="dashboard" className="mr-2 btn">Dashboard</NavLink>
+          <NavLink className="btn">Available Coin: {role?.coin} </NavLink>
           </>
         }
     </>

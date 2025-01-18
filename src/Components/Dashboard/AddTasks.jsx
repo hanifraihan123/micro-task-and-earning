@@ -6,6 +6,8 @@ import useAxios from "../Hooks/useAxios";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useAuth from "../Hooks/useAuth";
+import useRole from "../Hooks/useRole";
+import { useNavigate } from "react-router-dom";
 
 const image_hosting_key = import.meta.env.VITE_image_hosting_api;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
@@ -13,10 +15,17 @@ const AddTasks = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const axiosPublic = useAxios();
+    const {role} = useRole();
     const {user} = useAuth();
+    const navigate = useNavigate();
     const axiosSecure = useAxiosSecure();
     const { register, handleSubmit } = useForm()
     const onSubmit = async(data) => {
+      if(data.amount > role?.coin){
+        toast.error('Insufficient amount to pay')
+        navigate('/dashboard/purchaseCoin')
+        return;
+      }
         const imageFile = {image: data.image[0]}
         const res = await axiosPublic.post(image_hosting_api,imageFile,{
             headers: {
