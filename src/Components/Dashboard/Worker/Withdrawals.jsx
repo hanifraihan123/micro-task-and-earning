@@ -79,10 +79,9 @@ const Withdrawals = () => {
                     </div> 
                    </div>
                     <div className="form-control mt-6">
-                      {/* {
-                        role?.coin >! 200 ? <h3 className="text-red-500">Insufficient Coin To Withdraw</h3>: <button className="btn btn-primary">Withdraw</button>
-                      } */}
-                      <button className="btn btn-primary">Withdraw</button>
+                      {
+                        role?.coin < 200 ? <h3 className="text-red-500">Insufficient Coin To Withdraw</h3>: <button className="btn btn-primary">Withdraw</button>
+                      }
                     </div>
                   </form>
         </div>

@@ -3,8 +3,6 @@ import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { info } from "autoprefixer";
 
 const MyTasks = () => {
   const axiosSecure = useAxiosSecure();
@@ -149,15 +147,15 @@ const MyTasks = () => {
               <label className="label">
                 <span className="label-text">Submission Details: </span>
               </label>
-              <select
-                defaultValue={task.info}
+              <select 
+                defaultValue={task?.info}
                 onChange={(e) => setInfos(e.target.value)}
                 className="select select-bordered w-full"
               >
                  <option disabled>Select One</option>
-                <option>Screenshot</option>
-                <option>Image</option>
-                <option>Text</option>
+                <option value="Screenshot">Screenshot</option>
+                <option value="Image">Image</option>
+                <option value="Text">Text</option>
               </select>
             </div>
             <div className="form-control mt-2">
