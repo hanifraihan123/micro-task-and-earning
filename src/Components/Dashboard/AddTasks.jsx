@@ -8,6 +8,7 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useAuth from "../Hooks/useAuth";
 import useRole from "../Hooks/useRole";
 import { useNavigate } from "react-router-dom";
+import LoadingSpinner from "../Shared/LoadingSpinner";
 
 const image_hosting_key = import.meta.env.VITE_image_hosting_api;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
@@ -15,11 +16,12 @@ const AddTasks = () => {
 
     const [startDate, setStartDate] = useState(new Date());
     const axiosPublic = useAxios();
-    const {role} = useRole();
+    const {role,refetch,isLoading} = useRole();
     const {user} = useAuth();
     const navigate = useNavigate();
     const axiosSecure = useAxiosSecure();
     const { register, handleSubmit } = useForm()
+    if(isLoading){<LoadingSpinner></LoadingSpinner>}
     const onSubmit = async(data) => {
       if(data.amount > role?.coin){
         toast.error('Insufficient amount to pay')
@@ -47,7 +49,14 @@ const AddTasks = () => {
             }
             const taskInfo = await axiosSecure.post('/tasks',tasksData)
             if(taskInfo.data.insertedId){
+              const coins = role?.coin;
+              const badCoin = parseInt(data.amount);
+              const coin = coins - badCoin;
+              const response = await axiosSecure.patch(`/usersCoin/${user?.email}`,{coin})
+              if(response.data.modifiedCount > 0){
+                refetch()
                 toast.success('Task Added Successfully')
+              }
             }
         }
     }

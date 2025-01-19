@@ -21,7 +21,7 @@ const BuyerHome = () => {
         enabled: !!user?.email
     })
 
-    const {data: tasks = []} = useQuery({
+    const {data: tasks = [],refetch: update} = useQuery({
       queryKey: ['tasks',user?.email],
       queryFn: async()=>{
           const res = await axiosSecure.get(`/tasks/${user?.email}`)
@@ -39,7 +39,14 @@ const BuyerHome = () => {
       const res = await axiosSecure.patch(`/submit/${id}`, updateStatus)
       if(res.data.modifiedCount > 0){
         refetch();
-        toast.success('Status Approved')
+        const response = await axiosSecure.get(`/submit/${id}`)
+        const email = response.data.workerEmail;
+        const coin = response.data.amount;
+        const result = await axiosSecure.patch(`updateCoin/${email}`, {coin})
+        if(result.data.modifiedCount > 0){
+          update()
+          toast.success('Status Approved')
+        }
       }
     }
     const handleReject = async(id) => {
@@ -49,8 +56,14 @@ const BuyerHome = () => {
       const res = await axiosSecure.patch(`/submit/${id}`, updateStatus)
       if(res.data.modifiedCount > 0){
         refetch();
-        const result = await axiosSecure.patch('/updateWorker', )
-        toast.error('Status Rejected')
+        const response = await axiosSecure.get(`/submit/${id}`)
+        const taskId = response.data.taskId;
+        const worker = 1;
+        const result = await axiosSecure.patch(`/updateWorker/${taskId}`, {worker})
+        if(result.data.modifiedCount > 0){
+          update()
+          toast.error('Status Rejected')
+        }
       }
     }
 

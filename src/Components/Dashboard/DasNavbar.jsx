@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useRole from '../Hooks/useRole';
+import LoadingSpinner from '../Shared/LoadingSpinner';
 
 const DasNavbar = () => {
 
-  const {role} = useRole();
-
+  const {role,refetch,isLoading} = useRole();
+  if(isLoading){
+    <LoadingSpinner></LoadingSpinner>
+  }
+  refetch();
     return (
         <div className="navbar bg-lime-200">
         <div className="navbar-start">
