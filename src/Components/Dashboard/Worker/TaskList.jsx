@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import useTasks from "../../Hooks/useTasks";
+import { format } from "date-fns";
 
 const TaskList = () => {
 
     const [tasks] = useTasks();
+    
+    
 
   return (
     <div>
@@ -14,7 +17,7 @@ const TaskList = () => {
             {task.workers > 0 && <div className="card-body">
               <h2 className="card-title">Title: {task.title}</h2>
               <p>Buyer Email: {task.email}</p>
-              <p>Deadline: {task.deadline}</p>
+              <p>Deadline: {format(new Date(task.deadline), 'PP')}</p>
               <p>Payable Amount: {task.amount}</p>
               <p>Required Workers: {task.workers}</p>
               <div className="card-actions justify-center">

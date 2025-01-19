@@ -18,6 +18,10 @@ import MySubmission from "../Dashboard/Worker/MySubmission";
 import Withdrawals from "../Dashboard/Worker/Withdrawals";
 import TaskDetails from "../Dashboard/Worker/TaskDetails";
 import Payment from "../Dashboard/Payment";
+import AdminRoute from "./AdminRoute";
+import PrivateRoute from "./PrivateRoute";
+import BuyerRoute from "./BuyerRoute";
+import WorkerRoute from "./WorkerRoute";
 
 export const router = createBrowserRouter([
     {
@@ -40,59 +44,59 @@ export const router = createBrowserRouter([
     },
     {
       path: 'dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children: [
         {
           path: 'buyerHome',
-          element: <BuyerHome></BuyerHome>
+          element: <BuyerRoute><BuyerHome></BuyerHome></BuyerRoute>
         },
         {
           path: 'addTasks',
-          element: <AddTasks></AddTasks>
+          element: <BuyerRoute><AddTasks></AddTasks></BuyerRoute>
         },
         {
           path: 'myTasks',
-          element: <MyTasks></MyTasks>
+          element: <BuyerRoute><MyTasks></MyTasks></BuyerRoute>
         },
         {
           path: 'purchaseCoin',
-          element: <PurchaseCoin></PurchaseCoin>
+          element: <BuyerRoute><PurchaseCoin></PurchaseCoin></BuyerRoute>
         },
         {
           path: 'paymentHistory',
-          element: <PaymentHistory></PaymentHistory>
+          element: <BuyerRoute><PaymentHistory></PaymentHistory></BuyerRoute>
         },
         {
           path: 'adminHome',
-          element: <AdminHome></AdminHome>
+          element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
         },
         {
           path: 'manageUsers',
-          element: <ManageUsers></ManageUsers>
+          element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
         },
         {
           path: 'taskHistory',
-          element: <TaskHistory></TaskHistory>
+          element: <AdminRoute><TaskHistory></TaskHistory></AdminRoute>
         },
         {
           path: 'workerHome',
-          element: <WorkerHome></WorkerHome>
+          element: <WorkerRoute><WorkerHome></WorkerHome></WorkerRoute>
         },
         {
           path: 'taskList',
-          element: <TaskList></TaskList>
+          element: <WorkerRoute><TaskList></TaskList></WorkerRoute>
         },
         {
           path: 'taskDetails/:id',
-          element: <TaskDetails></TaskDetails>
+          element: <WorkerRoute><TaskDetails></TaskDetails></WorkerRoute>
         },
         {
           path: 'mySubmission',
-          element: <MySubmission></MySubmission>
+          element: <WorkerRoute><MySubmission></MySubmission></WorkerRoute>
         },
         {
           path: 'withdrawals',
-          element: <Withdrawals></Withdrawals>
+          element: <WorkerRoute><Withdrawals></Withdrawals></WorkerRoute>
         },
         {
           path: 'payment',
