@@ -84,19 +84,19 @@ const MyTasks = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>Serial</th>
               <th>Title</th>
               <th>Task Details</th>
+              <th>Workers</th>
               <th>Submission Details</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {tasks.map((task, index) => (
+            {tasks.map((task) => (
               <tr key={task._id} task={task}>
-                <th>{index + 1}</th>
                 <td>{task.title}</td>
                 <td>{task.details}</td>
+                <td>{task.workers}</td>
                 <td>{task.info}</td>
                 <td>
                   <button

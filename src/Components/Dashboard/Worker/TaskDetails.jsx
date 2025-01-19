@@ -3,6 +3,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import { format } from "date-fns";
 
 
 const TaskDetails = () => {
@@ -25,6 +26,7 @@ const TaskDetails = () => {
             taskId: task._id,
             taskTitle: task.title,
             taskDetails: task.details,
+            workerQty: task.workers,
             amount: task.amount,
             workerName: user?.displayName,
             workerEmail: user?.email,
@@ -53,7 +55,7 @@ const TaskDetails = () => {
     <p>Amount: {task.amount}</p>
     <p>Buyer Name: {task.name}</p>
     <p>Buyer Email: {task.email}</p>
-    <p>Deadline: {task.deadline}</p>
+    <p>Deadline: {format(new Date(task.deadline), 'PP')}</p>
     <form onSubmit={handleSubmit} className="form-control space-y-2">
     <span className="label-text">Submission Details:</span>
     <textarea name="details"

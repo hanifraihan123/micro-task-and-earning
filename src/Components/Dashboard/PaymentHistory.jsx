@@ -1,19 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
-import useAuth from "../Hooks/useAuth";
-import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { format } from "date-fns";
+import usePayments from "../Hooks/usePayments";
 
 
 const PaymentHistory = () => {
-    const {user} = useAuth();
-    const axiosSecure = useAxiosSecure();
-    const {data: payments = [], refetch} = useQuery({
-        queryKey: ['payments'],
-        queryFn: async()=>{
-            const res = await axiosSecure.get(`/payments/${user?.email}`)
-            return res.data
-        }
-    })
+ 
+    const [payments] = usePayments();
 
     return (
         <div>
@@ -28,6 +19,7 @@ const PaymentHistory = () => {
         <th>Email</th>
         <th>Transaction Id</th>
         <th>Date</th>
+        <th>Amount</th>
       </tr>
     </thead>
     <tbody>
@@ -38,6 +30,7 @@ const PaymentHistory = () => {
             <td>{payment.email}</td>
             <td>{payment.transactionId}</td>
             <td>{format(new Date(payment.date), 'PP')}</td>
+            <td>{payment.amount}</td>
           </tr>)
       }
     </tbody>

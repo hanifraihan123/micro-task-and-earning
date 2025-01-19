@@ -3,13 +3,16 @@ import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import usePayments from "../Hooks/usePayments";
 
 const BuyerHome = () => {
 
     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
     const [subs,setSubs] = useState();
-    const {data: submits = []} = useQuery({
+    const [payments] = usePayments();
+    const totalPayment = payments.reduce((total,payment)=> total + payment.amount, 0)
+    const {data: submits = [],refetch} = useQuery({
         queryKey: ['submits',user?.email],
         queryFn: async()=>{
             const res = await axiosSecure.get(`/submits/${user?.email}`)
@@ -19,7 +22,7 @@ const BuyerHome = () => {
     })
 
     const {data: tasks = []} = useQuery({
-      queryKey: ['taskss',user?.email],
+      queryKey: ['tasks',user?.email],
       queryFn: async()=>{
           const res = await axiosSecure.get(`/tasks/${user?.email}`)
           return res.data
@@ -35,6 +38,7 @@ const BuyerHome = () => {
       }
       const res = await axiosSecure.patch(`/submit/${id}`, updateStatus)
       if(res.data.modifiedCount > 0){
+        refetch();
         toast.success('Status Approved')
       }
     }
@@ -44,6 +48,8 @@ const BuyerHome = () => {
       }
       const res = await axiosSecure.patch(`/submit/${id}`, updateStatus)
       if(res.data.modifiedCount > 0){
+        refetch();
+        const result = await axiosSecure.patch('/updateWorker', )
         toast.error('Status Rejected')
       }
     }
@@ -60,6 +66,7 @@ const BuyerHome = () => {
         <div className="pt-6">
            <div className="flex justify-between px-6 text-blue-500">
            <p className="font-bold text-center">Total Task: {submits?.length}</p>
+           <p className="font-bold text-center">Total Payment: {totalPayment}</p>
            <p className="font-bold text-center">Required Workers: {pendingTask}</p>
            </div>
             <div className="overflow-x-auto">
@@ -71,6 +78,7 @@ const BuyerHome = () => {
         <th>Worker Name</th>
         <th>Task Title</th>
         <th>Payable Amount</th>
+        <th>Status</th>
         <th>View</th>
         <th>Action</th>
       </tr>
@@ -82,6 +90,7 @@ const BuyerHome = () => {
             <td>{submit.workerName}</td>
             <td>{submit.taskTitle}</td>
             <td>{submit.amount}</td>
+            <td>{submit.status}</td>
             <td><button onClick={()=>handleSubmit(submit._id)} className="btn btn-xs text-blue-500">View Submission</button></td>
             <td><button onClick={()=>handleApprove(submit._id)} className="btn btn-xs text-green-500 mr-2">Approve</button> <button onClick={()=>handleReject(submit._id)} className="btn btn-xs text-red-500">Reject</button></td>
           </tr>)

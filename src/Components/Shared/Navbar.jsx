@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../Hooks/useRole";
+import { AiTwotoneDollarCircle } from "react-icons/ai";
 
 
 const Navbar = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
         {
           user && <>
           <NavLink to="dashboard" className="mr-2 btn">Dashboard</NavLink>
-          <NavLink className="btn">Available Coin: {role?.coin} </NavLink>
+          <button className="btn bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </button>
           </>
         }
     </>

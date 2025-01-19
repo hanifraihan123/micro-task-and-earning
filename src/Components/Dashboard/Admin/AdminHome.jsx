@@ -6,14 +6,14 @@ import toast from "react-hot-toast";
 const AdminHome = () => {
 
     const axiosSecure = useAxiosSecure();
-    const {data: withdraws=[]} = useQuery({
+    const {data: withdraws=[],refetch} = useQuery({
         queryKey: ['withdraws'],
         queryFn: async()=>{
             const res = await axiosSecure.get('/withdraws')
             return res.data;
         }
     })
-    const {data: users = []} = useQuery({
+    const {data: users = [], refetch: update} = useQuery({
         queryKey: ['users'],
         queryFn: async ()=>{
             const res = await axiosSecure.get('/users')
@@ -33,11 +33,18 @@ const AdminHome = () => {
     
     const handlePayment = async(id) => {
         const data = await axiosSecure.get(`/withdraw/${id}`)
-        const coin = data.data.withdrawal_coin;
-        const updateStatus = {status: 'approved'}
+        const prevCoin = data.data.withdrawal_coin;
+        const email = data.data.worker_email;
+        const updateCoin = {coin: prevCoin}
+        const result = await axiosSecure.patch(`/user/${email}`, updateCoin)
+        if(result.data.modifiedCount > 0){
+          const updateStatus = {status: 'approved'}
         const res = await axiosSecure.patch(`/withdraw/${id}`, updateStatus)
         if(res.data.modifiedCount > 0){
+            refetch()
+            update()
             toast.success('Status Approved Successfully')
+        }
         }
     }
 
@@ -54,22 +61,22 @@ const AdminHome = () => {
     {/* head */}
     <thead>
       <tr>
-        <th>Serial</th>
         <th>Name</th>
         <th>Email</th>
         <th>Payment Method</th>
         <th>Amount</th>
+        <th>Status</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       {
-        withdraws.map((withdraw,index)=><tr key={withdraw._id} withdraw={withdraw}>
-            <th>{index + 1}</th>
+        withdraws.map((withdraw)=><tr key={withdraw._id} withdraw={withdraw}>
             <td>{withdraw.worker_name}</td>
             <td>{withdraw.worker_email}</td>
             <td>{withdraw.payment_system}</td>
             <td>{withdraw.withdrawal_coin}</td>
+            <td>{withdraw.status}</td>
             <td><button onClick={()=>handlePayment(withdraw._id)} className="btn btn-xs text-blue-500">Payment Success</button></td>
           </tr>)
       }
