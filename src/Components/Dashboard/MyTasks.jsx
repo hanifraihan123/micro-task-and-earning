@@ -8,7 +8,7 @@ const MyTasks = () => {
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const [task, setTask] = useState({});
-  const [infos, setInfos] = useState("");
+  const [infos, setInfos] = useState(task.info);
   const { data: tasks = [], refetch } = useQuery({
     queryKey: ["tasks",user?.email],
     queryFn: async () => {
@@ -148,21 +148,20 @@ const MyTasks = () => {
                 <span className="label-text">Submission Details: </span>
               </label>
               <select 
-                defaultValue={task?.info}
                 onChange={(e) => setInfos(e.target.value)}
                 className="select select-bordered w-full"
               >
                  <option disabled>Select One</option>
-                <option value="Screenshot">Screenshot</option>
-                <option value="Image">Image</option>
-                <option value="Text">Text</option>
+                <option selected={task.info === 'Screenshot'? true : false} value="Screenshot">Screenshot</option>
+                <option selected={task.info === 'Image'? true : false} value="Image">Image</option>
+                <option selected={task.info === 'Text'? true : false} value="Text">Text</option>
               </select>
             </div>
             <div className="form-control mt-2">
           <button className="btn btn-primary">Update</button>
         </div>
           </form>
-          <div className="modal-action">
+          <div className="modal-action mt-0 mr-5">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <button className="btn">Close</button>

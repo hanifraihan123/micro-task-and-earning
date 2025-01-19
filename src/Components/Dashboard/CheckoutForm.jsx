@@ -2,18 +2,25 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useAuth from "../Hooks/useAuth";
+import { useNavigate, useParams } from "react-router-dom";
+import toast from "react-hot-toast";
+import useRole from "../Hooks/useRole";
 
 const CheckoutForm = () => {
 
+    const {price} = useParams();
     const stripe = useStripe();
     const elements = useElements();
+    const {role,refetch} = useRole();
+    const navigate = useNavigate();
+    const id = role?._id;
     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
     const [clientSecret,setClientSecret] = useState('');
     const [transactionId,setTransactionId] = useState('');
     const [error,setError] = useState('');
 
-    const actualPrice = 1;
+    const actualPrice = price;
     useEffect(()=>{
         axiosSecure.post('/create-payment-intent', {price: actualPrice})
         .then(res=>{
@@ -40,7 +47,7 @@ const CheckoutForm = () => {
         setError(error.message)
     }
     else{
-        console.log('payment method', paymentMethod)
+        // console.log('payment method', paymentMethod)
         setError('')
     }
 
@@ -57,14 +64,32 @@ const CheckoutForm = () => {
       console.log(cardError)
     }
     else{
-      console.log('payment intent', paymentIntent)
+      // console.log('payment intent', paymentIntent)
       if(paymentIntent.status === 'succeeded'){
         setTransactionId(paymentIntent.id)
-
         const paymentInfo = {
+          name: user?.displayName,
           email: user?.email,
           date: new Date(),
-          
+          transactionId: paymentIntent.id,
+          amount: paymentIntent.amount
+        }
+        const res = await axiosSecure.post('/payment', paymentInfo)
+        let coin = 10;
+        if(paymentIntent.amount === 1000){coin = coin + 140}
+        if(paymentIntent.amount === 2000){coin = coin + 490}
+        if(paymentIntent.amount === 3500){coin = coin + 990}
+
+        const upCoin = role?.coin + coin
+
+        if(res.data.insertedId){
+          const updateCoin = {newCoin: upCoin}
+          const result = await axiosSecure.patch(`/changeCoin/${id}`, updateCoin)
+          if(result.data.modifiedCount > 0){
+            refetch();
+            toast.success('Payment Completed Successfully')
+            setTimeout(()=>{navigate('/dashboard/paymentHistory')},2000)
+          }
         }
       }
     }

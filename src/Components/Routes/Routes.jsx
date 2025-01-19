@@ -22,6 +22,7 @@ import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 import BuyerRoute from "./BuyerRoute";
 import WorkerRoute from "./WorkerRoute";
+import CheckoutForm from "../Dashboard/CheckoutForm";
 
 export const router = createBrowserRouter([
     {
@@ -99,7 +100,7 @@ export const router = createBrowserRouter([
           element: <WorkerRoute><Withdrawals></Withdrawals></WorkerRoute>
         },
         {
-          path: 'payment',
+          path: 'payment/:price',
           element: <Payment></Payment>
         }
       ]
