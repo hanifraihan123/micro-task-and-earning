@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../Hooks/useAuth';
 import toast from 'react-hot-toast';
 import useAxios from '../Hooks/useAxios';
+import useRole from '../Hooks/useRole';
 
 const Login = () => {
 
@@ -12,6 +13,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const axiosPublic = useAxios();
+  const {refetch} = useRole();
   const from = location.state || "/"
   const { register, handleSubmit } = useForm()
       const onSubmit = (data) => {
@@ -19,6 +21,7 @@ const Login = () => {
         .then(res=>{
           if(res.user){
             navigate(from)
+            refetch();
             toast.success('User Login Successfully')
           }
         })
@@ -30,6 +33,7 @@ const Login = () => {
       const handleGoogle = () => {
         logInWithGoogle()
         .then( async(result) => {
+          refetch();
           toast.success('User Login Successfully')
           navigate(from)
           const userInfo = {
