@@ -24,9 +24,9 @@ const BestWorkers = () => {
                 alt="Shoes"
               />
             </figure>
-            <h2 className="card-title">{user.name}</h2>
-            <p>{user.email}</p>
-            <p>{user.coin}</p>
+            <h2 className="card-title">Name: {user.name}</h2>
+            <p>Email: {user.email}</p>
+            <p>Coin: {user.coin}</p>
           </div>
         </div>)
        }

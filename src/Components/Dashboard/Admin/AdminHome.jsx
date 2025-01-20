@@ -29,6 +29,16 @@ const AdminHome = () => {
         }
     })
 
+    const {data: payments = [],refetch: correct} = useQuery({
+      queryKey: ['payments'],
+      queryFn: async()=>{
+        const res = await axiosSecure.get('/payments')
+        return res.data;
+      }
+    })
+
+    const totalPayments = payments.reduce((total,payment)=> total + payment.amount,0)
+
     const totalCoin = users.reduce((total,user)=> total + user.coin,0)
     
     const handlePayment = async(id) => {
@@ -43,6 +53,7 @@ const AdminHome = () => {
         if(res.data.modifiedCount > 0){
             refetch()
             update()
+            correct()
             toast.success('Status Approved Successfully')
         }
         }
@@ -51,9 +62,10 @@ const AdminHome = () => {
     return (
         <div className="">
              <h3 className="font-bold text-3xl text-center pt-4">Withdraw Request</h3>
-             <div className="lg:flex md:flex lg:justify-between md:justify-center md:gap-6 text-center lg:px-6 py-4 text-blue-500">
+             <div className="lg:flex md:flex lg:justify-between md:justify-center md:gap-6 text-center space-y-2 lg:space-y-0 lg:px-6 py-4 text-blue-500">
              <p className="font-bold">Total Buyer: {totalData?.buyer}</p>
              <p className="font-bold">Total Worker: {totalData?.worker}</p>
+             <p className="font-bold">Total Payments: {totalPayments}</p>
              <p className="font-bold">Total Coin: {totalCoin}</p>
              </div>
              <div className="overflow-x-auto lg:ml-8">

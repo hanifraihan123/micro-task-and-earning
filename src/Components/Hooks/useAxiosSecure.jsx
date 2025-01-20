@@ -3,7 +3,7 @@ import useAuth from "./useAuth";
 import { useNavigate } from "react-router-dom";
 
 const axiosInstance = axios.create({
-    baseURL: 'https://task-and-earning-server.vercel.app',
+    baseURL: 'http://localhost:5000',
     withCredentials: true
 })
 

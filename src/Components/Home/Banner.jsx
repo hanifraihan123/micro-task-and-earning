@@ -48,10 +48,10 @@ const Banner = () => {
   <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
-          delay: 3500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 3500,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           clickable: true,
         }}
@@ -62,12 +62,49 @@ const Banner = () => {
         keyboard={true}
         modules={[Navigation,Autoplay, Pagination, Mousewheel, Keyboard]}
       >
-        <SwiperSlide><div><img className='object-cover h-[440px] w-full' src={img1} alt="" /></div></SwiperSlide>
-        <SwiperSlide><div><img className='object-cover h-[440px] w-full' src={img2} alt="" /></div></SwiperSlide>
-        <SwiperSlide><div><img className='object-cover h-[440px] w-full' src={img3} alt="" /></div></SwiperSlide>
-        <SwiperSlide><div><img className='object-cover h-[440px] w-full' src={img4} alt="" /></div></SwiperSlide>
-        <SwiperSlide><div><img className='object-cover h-[440px] w-full' src={img5} alt="" /></div></SwiperSlide>
-        <SwiperSlide><div><img className='object-cover h-[440px] w-full' src={img6} alt="" /></div></SwiperSlide>
+        <SwiperSlide>
+          <div className='relative'>
+            <img className='object-cover h-[440px] w-full' src={img1} alt="" />
+            <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-orange-800'>"Unlock Micro Tasks, Earn Big Rewards!"</h3>
+            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-orange-800'>"Your Journey to Easy Earnings Starts Here!"</p>
+            </div>
+            </SwiperSlide>
+        <SwiperSlide>
+          <div className='relative'>
+            <img className='object-cover h-[440px] w-full' src={img2} alt="" />
+            <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-black'>"Complete Tasks. Earn Instantly. Repeat!"</h3>
+            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-black'>"Turn Your Free Time into Real Cash!"</p>
+            </div>
+            </SwiperSlide>
+        <SwiperSlide>
+          <div className='relative'>
+            <img className='object-cover h-[440px] w-full' src={img3} alt="" />
+            <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-pink-500'>"Every Task Counts – Start Earning Today!"</h3>
+            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-pink-500'>"Join the Smart Way to Earn Online!"</p>
+            </div>
+            </SwiperSlide>
+        <SwiperSlide>
+          <div className='relative'>
+            <img className='object-cover h-[440px] w-full' src={img4} alt="" />
+            <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-black'>"Your Gateway to Micro Earning Opportunities!"</h3>
+            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-black'>"From Small Steps to Big Earnings!"</p>
+            </div>
+            </SwiperSlide>
+        <SwiperSlide>
+          <div className='relative'>
+            <img className='object-cover h-[440px] w-full' src={img5} alt="" />
+            <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-red-500'>"Join the Smart Way to Earn Online!"</h3>
+            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-red-500'>"Make Every Second Count – Earn Now!"</p>
+            </div>
+            </SwiperSlide>
+        <SwiperSlide>
+          <div className='relative'>
+            <img className='object-cover h-[440px] w-full' src={img6} alt="" />
+            <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-white'>"Simple Tasks, Quick Payouts!"</h3>
+            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-white'>"From Small Steps to Big Earnings!"</p>
+            </div>
+            </SwiperSlide>
+        
       </Swiper>
         </div>
     );
