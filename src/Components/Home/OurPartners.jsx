@@ -1,3 +1,5 @@
+import { motion } from "motion/react"
+
 const OurPartners = () => {
   return (
     <div className="bg-orange-300">
@@ -18,7 +20,7 @@ const OurPartners = () => {
         <div className="lg:w-1/3 lg:pr-10 px-4 pb-10">
           <div className="card bg-orange-100 shadow-xl">
             <figure className="p-10">
-              <img
+              <motion.img initial={{ scale: 0 }} animate={{ scale: 1 }}
                 src="https://i.ibb.co.com/z4J0TjM/boss-approving-congratulating-young-successful-employee.jpg"
                 alt="Shoes"
                 className="rounded-xl"

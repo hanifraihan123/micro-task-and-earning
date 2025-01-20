@@ -91,14 +91,14 @@ const AddTasks = () => {
           <input type="number" {...register("amount")} placeholder="Enter Amount" className="input input-bordered" required />
         </div>
        </div>
-        <div className="lg:flex gap-4">
-        <div className="lg:w-1/3">
+        <div className="lg:flex md:flex gap-4">
+        <div className="lg:w-1/3 md:w-1/3">
         <label className="label">
             <span className="label-text">Deadline</span>
           </label>
         <DatePicker className="input input-bordered" selected={startDate} onChange={(date) => setStartDate(date)} />
         </div>
-        <div className="lg:w-1/3">
+        <div className="lg:w-1/3 md:w-1/3">
         <label className="label">
             <span className="label-text">Submission Info</span>
           </label>
@@ -109,11 +109,11 @@ const AddTasks = () => {
   <option>Text</option>
 </select>
         </div>
-        <div className="">
+        <div>
         <label className="label">
             <span className="label-text">Image URL</span>
           </label>
-        <input type="file" {...register("image")} className="lg:file-input file-input-bordered" />
+        <input type="file" {...register("image")} className="lg:file-input md:file-input file-input-bordered" />
         </div>
         </div>
         <div className="form-control lg:mt-6 mt-2">

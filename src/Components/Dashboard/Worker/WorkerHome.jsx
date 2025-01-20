@@ -22,14 +22,14 @@ const WorkerHome = () => {
     return (
         <div>
             <h3 className="font-bold text-2xl text-center py-6">Total Submissions: {submissions?.length}</h3>
-            <div className="flex lg:flex-row flex-col gap-3 lg:justify-between justify-center lg:px-4 pb-4">
-            <span className="font-bold text-xl text-center text-blue-500">Pending Submissions: {pendingData?.length}</span>
-            <span className="font-bold text-xl text-center text-yellow-500">Payable Amount: {payableAmount}</span>
-            <span className="font-bold text-xl text-center text-red-500">Rejected Submissions: {rejectedData?.length}</span>
-            <span className="font-bold text-xl text-center text-green-500">Approved Submissions: {actualData?.length}</span>
+            <div className="flex lg:flex-row md:flex-row flex-col gap-3 lg:justify-between justify-center lg:px-4 pb-4">
+            <span className="font-bold text-md text-center text-blue-500">Pending Submissions: {pendingData?.length}</span>
+            <span className="font-bold text-md text-center text-pink-800">Payable Amount: {payableAmount}</span>
+            <span className="font-bold text-md text-center text-red-500">Rejected Submissions: {rejectedData?.length}</span>
+            <span className="font-bold text-md text-center text-green-500">Approved Submissions: {actualData?.length}</span>
             </div>
             <div className="overflow-x-auto">
-  <table className="table table-zebra">
+  <table className="table">
     {/* head */}
     <thead>
       <tr>

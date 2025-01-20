@@ -71,7 +71,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
   {
-    user ? <div className="flex items-center gap-4"><button className="btn btn-xs bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </button><img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" /> <button onClick={handleLogout} className="btn btn-warning">Logout</button></div> :<><Link to="/login"><button className="btn btn-warning mr-2">Login</button></Link>
+    user ? <div className="flex items-center gap-4"><button className="btn btn-sm bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </button><img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" /> <button onClick={handleLogout} className="btn btn-warning">Logout</button></div> :<><Link to="/login"><button className="btn btn-warning mr-2">Login</button></Link>
   <Link to="/register"><button className="btn btn-warning">Register</button></Link></>
   }
   </div>

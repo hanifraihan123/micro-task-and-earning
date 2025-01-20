@@ -51,7 +51,7 @@ const AdminHome = () => {
     return (
         <div className="">
              <h3 className="font-bold text-3xl text-center pt-4">Withdraw Request</h3>
-             <div className="lg:flex lg:justify-between text-center lg:px-6 py-4 text-blue-500">
+             <div className="lg:flex md:flex lg:justify-between md:justify-center md:gap-6 text-center lg:px-6 py-4 text-blue-500">
              <p className="font-bold">Total Buyer: {totalData?.buyer}</p>
              <p className="font-bold">Total Worker: {totalData?.worker}</p>
              <p className="font-bold">Total Coin: {totalCoin}</p>

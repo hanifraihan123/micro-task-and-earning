@@ -17,7 +17,7 @@ const MySubmission = () => {
     <div>
       <h3 className="font-bold text-3xl text-center py-6">My Submission: {submits.length}</h3>
       <div className="overflow-x-auto">
-  <table className="table table-zebra">
+  <table className="table">
     {/* head */}
     <thead>
       <tr>
