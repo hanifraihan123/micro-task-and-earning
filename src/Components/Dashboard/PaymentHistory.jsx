@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import usePayments from "../Hooks/usePayments";
+import { Helmet } from "react-helmet-async";
 
 
 const PaymentHistory = () => {
@@ -8,6 +9,9 @@ const PaymentHistory = () => {
 
     return (
         <div>
+                       <Helmet>
+                        <title>PaidWork || Payment History</title>
+                      </Helmet>
             <h3 className="font-bold text-3xl text-center py-6">Payment History</h3>
             <div className="overflow-x-auto">
   <table className="table">

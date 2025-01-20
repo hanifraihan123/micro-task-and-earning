@@ -9,6 +9,7 @@ import useAuth from "../Hooks/useAuth";
 import useRole from "../Hooks/useRole";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../Shared/LoadingSpinner";
+import { Helmet } from "react-helmet-async";
 
 const image_hosting_key = import.meta.env.VITE_image_hosting_api;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
@@ -63,6 +64,9 @@ const AddTasks = () => {
 
     return (
         <div>
+             <Helmet>
+              <title>PaidWork || Add Task</title>
+            </Helmet>          
             <h3 className="font-bold text-3xl text-center py-4">Add New Task</h3>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body pt-0">
         <div className="form-control">

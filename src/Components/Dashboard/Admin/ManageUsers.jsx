@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const ManageUsers = () => {
   const axiosSecure = useAxiosSecure();
@@ -58,6 +59,9 @@ const ManageUsers = () => {
 
   return (
     <div>
+             <Helmet>
+              <title>PaidWork || ManageUsers</title>
+            </Helmet>      
       <h3 className="font-bold text-3xl text-center py-6">
         Manage Users: {users?.length}
       </h3>

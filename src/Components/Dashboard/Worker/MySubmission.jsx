@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const MySubmission = () => {
     const {user} = useAuth();
@@ -15,6 +16,9 @@ const MySubmission = () => {
 
   return (
     <div>
+                   <Helmet>
+                    <title>PaidWork || My Submission</title>
+                  </Helmet>
       <h3 className="font-bold text-3xl text-center py-6">My Submission: {submits.length}</h3>
       <div className="overflow-x-auto">
   <table className="table">

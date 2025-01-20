@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
+import { motion } from "motion/react"
 
 const BestWorkers = () => {
   const axiosSecure = useAxiosSecure();
@@ -19,7 +20,8 @@ const BestWorkers = () => {
         users.map(user=> <div key={user._id} user={user} className="card bg-lime-100 shadow-xl">
           <div className="card-body">
             <figure className="rounded-xl">
-              <img
+              <motion.img whileHover={{ scale: 1.3 }}
+  whileTap={{ scale: 0.95 }}
                 src={user.photo}
                 alt="Shoes"
               />

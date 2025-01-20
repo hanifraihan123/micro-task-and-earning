@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
 import useAxios from "../Hooks/useAxios";
+import { Helmet } from "react-helmet-async";
 
 const image_hosting_key = import.meta.env.VITE_image_hosting_api;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
@@ -69,6 +70,9 @@ const Register = () => {
 
     return (
         <div className='lg:flex gap-4'>
+                       <Helmet>
+                        <title>PaidWork || Register</title>
+                      </Helmet>
         <div className='flex-1'>
         <form  onSubmit={handleSubmit(onSubmit)} className="card-body mx-auto pt-2">
             <h3 className="text-center font-bold text-3xl pt-4">Register Now</h3>

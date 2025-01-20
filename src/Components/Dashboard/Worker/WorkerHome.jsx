@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const WorkerHome = () => {
 
@@ -21,6 +22,9 @@ const WorkerHome = () => {
 
     return (
         <div>
+                       <Helmet>
+                        <title>PaidWork || WorkerHome</title>
+                      </Helmet>
             <h3 className="font-bold text-2xl text-center py-6">Total Submissions: {submissions?.length}</h3>
             <div className="flex lg:flex-row md:flex-row flex-col gap-3 lg:justify-between justify-center lg:px-4 pb-4">
             <span className="font-bold text-md text-center text-blue-500">Pending Submissions: {pendingData?.length}</span>

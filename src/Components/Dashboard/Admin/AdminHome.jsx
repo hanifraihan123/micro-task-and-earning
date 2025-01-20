@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const AdminHome = () => {
@@ -61,6 +62,9 @@ const AdminHome = () => {
 
     return (
         <div className="">
+             <Helmet>
+              <title>PaidWork || AdminHome</title>
+            </Helmet>         
              <h3 className="font-bold text-3xl text-center pt-4">Withdraw Request</h3>
              <div className="lg:flex md:flex lg:justify-between md:justify-center md:gap-6 text-center space-y-2 lg:space-y-0 lg:px-6 py-4 text-blue-500">
              <p className="font-bold">Total Buyer: {totalData?.buyer}</p>

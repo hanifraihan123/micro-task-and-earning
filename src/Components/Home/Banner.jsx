@@ -19,39 +19,13 @@ const Banner = () => {
 
     return (
         <div>
-           {/* <Carousel autoPlay={false} infiniteLoop={true} stopOnHover={false} useKeyboardArrows={true}>
-    <div className="relative">
-      <img className="" alt="" src={img1} />
-      <p className="-mt-[420px] ml-[540px] z-50 absolute font-bold text-3xl text-orange-500">Manpower Management</p>
-    </div>
-    <div className="">
-      <img alt="" src={img2} />
-      <p className="legend">Legend 2</p>
-    </div>
-    <div>
-      <img alt="" src={img3} />
-      <p className="legend">Legend 3</p>
-    </div>
-    <div>
-      <img alt="" src={img4} />
-      <p className="legend">Legend 4</p>
-    </div>
-    <div>
-      <img alt="" src={img5} />
-      <p className="legend">Legend 5</p>
-    </div>
-    <div>
-      <img alt="" src={img6} />
-      <p className="legend">Legend 6</p>
-    </div>
-  </Carousel> */}
   <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        // autoplay={{
-        //   delay: 3500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
@@ -73,21 +47,21 @@ const Banner = () => {
           <div className='relative'>
             <img className='object-cover h-[440px] w-full' src={img2} alt="" />
             <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-black'>"Complete Tasks. Earn Instantly. Repeat!"</h3>
-            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-black'>"Turn Your Free Time into Real Cash!"</p>
+            <p className='absolute -mt-[200px] ml-[490px] font-bold text-xl z-50 text-black'>"Turn Your Free Time into Real Cash!"</p>
             </div>
             </SwiperSlide>
         <SwiperSlide>
           <div className='relative'>
             <img className='object-cover h-[440px] w-full' src={img3} alt="" />
             <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-pink-500'>"Every Task Counts – Start Earning Today!"</h3>
-            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-pink-500'>"Join the Smart Way to Earn Online!"</p>
+            <p className='absolute -mt-[200px] ml-[490px] font-bold text-xl z-50 text-pink-500'>"Join the Smart Way to Earn Online!"</p>
             </div>
             </SwiperSlide>
         <SwiperSlide>
           <div className='relative'>
             <img className='object-cover h-[440px] w-full' src={img4} alt="" />
             <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-black'>"Your Gateway to Micro Earning Opportunities!"</h3>
-            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-black'>"From Small Steps to Big Earnings!"</p>
+            <p className='absolute -mt-[200px] ml-[550px] font-bold text-xl z-50 text-black'>"From Small Steps to Big Earnings!"</p>
             </div>
             </SwiperSlide>
         <SwiperSlide>
@@ -101,10 +75,9 @@ const Banner = () => {
           <div className='relative'>
             <img className='object-cover h-[440px] w-full' src={img6} alt="" />
             <h3 className='absolute -mt-[250px] ml-[380px] font-bold text-3xl z-50 text-white'>"Simple Tasks, Quick Payouts!"</h3>
-            <p className='absolute -mt-[200px] ml-[450px] font-bold text-xl z-50 text-white'>"From Small Steps to Big Earnings!"</p>
+            <p className='absolute -mt-[200px] ml-[430px] font-bold text-xl z-50 text-white'>"From Small Steps to Big Earnings!"</p>
             </div>
             </SwiperSlide>
-        
       </Swiper>
         </div>
     );

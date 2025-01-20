@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const PurchaseCoin = () => {
 
   return (
     <div>
+                   <Helmet>
+                    <title>PaidWork || Purchase Coin</title>
+                  </Helmet>
       <h3 className="font-bold text-3xl text-center py-6">Purchase Coin</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:p-4 p-2 justify-center items-center">
         <Link to={`/dashboard/payment/${1}`}>

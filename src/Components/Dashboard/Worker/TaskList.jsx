@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useTasks from "../../Hooks/useTasks";
 import { format } from "date-fns";
+import { Helmet } from "react-helmet-async";
 
 const TaskList = () => {
 
@@ -10,6 +11,9 @@ const TaskList = () => {
 
   return (
     <div>
+                   <Helmet>
+                    <title>PaidWork || TaskList</title>
+                  </Helmet>
       <h3 className="font-bold text-3xl text-center py-6">Task List: {tasks.length}</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
       {

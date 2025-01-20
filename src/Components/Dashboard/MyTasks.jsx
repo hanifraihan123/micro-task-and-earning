@@ -4,6 +4,7 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import useRole from "../Hooks/useRole";
+import { Helmet } from "react-helmet-async";
 
 const MyTasks = () => {
   const axiosSecure = useAxiosSecure();
@@ -85,6 +86,9 @@ const MyTasks = () => {
 
   return (
     <div>
+                   <Helmet>
+                    <title>PaidWork || My Task</title>
+                  </Helmet>
       <h3 className="font-bold text-center text-3xl py-6">
         My Tasks : {tasks.length}
       </h3>

@@ -8,6 +8,7 @@ import { BsCoin } from "react-icons/bs";
 import { FaSackDollar } from "react-icons/fa6";
 import DasFooter from "../Dashboard/DasFooter";
 import useRole from "../Hooks/useRole";
+import { Helmet } from "react-helmet-async";
 
 
 const Dashboard = () => {
@@ -16,6 +17,9 @@ const Dashboard = () => {
 
     return (
         <div>
+             <Helmet>
+              <title>PaidWork || Dashboard</title>
+            </Helmet>
             <DasNavbar></DasNavbar>
          <div className="flex">
          <div className="lg:w-1/6 min-h-screen bg-amber-200 text-center lg:py-4"> 

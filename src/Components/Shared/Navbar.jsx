@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
 import useRole from "../Hooks/useRole";
 import { AiTwotoneDollarCircle } from "react-icons/ai";
+import { motion } from "motion/react"
 
 
 const Navbar = () => {
@@ -61,7 +62,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
   {
-    user ? <div className="flex items-center gap-4"><button className="btn btn-sm bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </button><img className="h-10 w-10 rounded-full" src={user?.photoURL} alt="" /> <button onClick={handleLogout} className="btn btn-warning">Logout</button></div> :<><Link to="/login"><button className="btn btn-warning mr-2">Login</button></Link>
+    user ? <div className="flex items-center gap-4"><motion.button animate={{ rotate: 360 }} transition={{ duration: 2 }} className="btn btn-sm bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </motion.button><img className="h-10 w-10 rounded-full" src={user?.photoURL} alt="" /> <button onClick={handleLogout} className="btn btn-warning">Logout</button></div> :<><Link to="/login"><button className="btn btn-warning mr-2">Login</button></Link>
   <Link to="/register"><button className="btn btn-warning">Register</button></Link></>
   }
   </div>

@@ -4,6 +4,7 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import usePayments from "../Hooks/usePayments";
+import { Helmet } from "react-helmet-async";
 
 const BuyerHome = () => {
 
@@ -77,6 +78,9 @@ const BuyerHome = () => {
 
     return (
         <div className="pt-6">
+                       <Helmet>
+                        <title>PaidWork || BuyerHome</title>
+                      </Helmet>
            <div className="lg:flex gap-2 lg:justify-between justify-center lg:px-6 text-blue-500">
            <p className="font-bold text-center">Total Task: {submits?.length}</p>
            <p className="font-bold text-center">Total Payment: {totalPayment}</p>

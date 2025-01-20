@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { format } from "date-fns";
+import { Helmet } from "react-helmet-async";
 
 
 const TaskDetails = () => {
@@ -44,6 +45,9 @@ const TaskDetails = () => {
 
     return (
         <div>
+                         <Helmet>
+                          <title>PaidWork || Task Details</title>
+                        </Helmet>
            <h3 className="font-bold text-3xl text-center py-6">Task Details</h3> 
            <div className="px-6 pb-6">
            <div className="card bg-orange-100 shadow-xl">

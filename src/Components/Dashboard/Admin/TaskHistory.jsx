@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import useTasks from "../../Hooks/useTasks";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const TaskHistory = () => {
@@ -46,6 +47,9 @@ const TaskHistory = () => {
 
     return (
         <div>
+                       <Helmet>
+                        <title>PaidWork || Task History</title>
+                      </Helmet>
             <h3 className="font-bold text-3xl text-center py-6">Manage Tasks: {tasks.length}</h3>
             <div className="overflow-x-auto">
   <table className="table">

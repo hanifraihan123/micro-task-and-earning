@@ -4,6 +4,7 @@ import useRole from "../../Hooks/useRole";
 import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Withdrawals = () => {
 
@@ -40,6 +41,9 @@ const Withdrawals = () => {
 
     return (
         <div>
+                       <Helmet>
+                        <title>PaidWork || Withdraw</title>
+                      </Helmet>
             <h3 className="font-bold text-2xl text-center py-4">Withdrawals Form</h3>
             <p className="text-center font-bold mb-2">Available Coin: {role?.coin}</p>
             <p className="text-center font-bold">Possible Withdrawal Amount: {role?.coin/20} $</p>
