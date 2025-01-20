@@ -110,7 +110,7 @@ const MyTasks = () => {
                 <td>
                   <button
                     onClick={() => handleUpdate(task._id)}
-                    className="btn btn-xs mr-2 text-green-500"
+                    className="btn btn-xs mr-2 text-green-500 mb-2"
                   >
                     Update
                   </button>{" "}
@@ -127,7 +127,7 @@ const MyTasks = () => {
         </table>
       </div>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
-      <dialog id="submit_modal" className="modal modal-bottom sm:modal-middle">
+      <dialog id="submit_modal" className="modal sm:modal-middle">
         <div className="modal-box">
           <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">

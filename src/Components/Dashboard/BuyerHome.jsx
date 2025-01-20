@@ -77,7 +77,7 @@ const BuyerHome = () => {
 
     return (
         <div className="pt-6">
-           <div className="flex justify-between px-6 text-blue-500">
+           <div className="lg:flex gap-2 lg:justify-between justify-center lg:px-6 text-blue-500">
            <p className="font-bold text-center">Total Task: {submits?.length}</p>
            <p className="font-bold text-center">Total Payment: {totalPayment}</p>
            <p className="font-bold text-center">Required Workers: {pendingTask}</p>
@@ -87,7 +87,6 @@ const BuyerHome = () => {
     {/* head */}
     <thead>
       <tr>
-        <th>Serial</th>
         <th>Worker Name</th>
         <th>Task Title</th>
         <th>Payable Amount</th>
@@ -98,14 +97,13 @@ const BuyerHome = () => {
     </thead>
     <tbody>
       {
-        submits.map((submit,index)=><tr key={submit._id} submit={submit}>
-            <th>{index + 1}</th>
+        submits.map((submit)=><tr key={submit._id} submit={submit}>
             <td>{submit.workerName}</td>
             <td>{submit.taskTitle}</td>
             <td>{submit.amount}</td>
             <td>{submit.status}</td>
             <td><button onClick={()=>handleSubmit(submit._id)} className="btn btn-xs text-blue-500">View Submission</button></td>
-            <td><button onClick={()=>handleApprove(submit._id)} className="btn btn-xs text-green-500 mr-2">Approve</button> <button onClick={()=>handleReject(submit._id)} className="btn btn-xs text-red-500">Reject</button></td>
+            <td className="text-center"><button onClick={()=>handleApprove(submit._id)} className="btn btn-xs text-green-500 mb-2">Approve</button> <button onClick={()=>handleReject(submit._id)} className="btn btn-xs text-red-500">Reject</button></td>
           </tr>)
       }
       
@@ -113,7 +111,7 @@ const BuyerHome = () => {
   </table>
 </div>
 {/* Open the modal using document.getElementById('ID').showModal() method */}
-<dialog id="submit_modal" className="modal modal-bottom sm:modal-middle">
+<dialog id="submit_modal" className="modal sm:modal-middle">
   <div className="modal-box">
     <h3 className="font-bold text-lg">Sumission Details</h3>
     {subs && <p className="py-4">{subs.submissionDetails}</p>}

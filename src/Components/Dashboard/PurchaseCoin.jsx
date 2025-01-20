@@ -5,7 +5,7 @@ const PurchaseCoin = () => {
   return (
     <div>
       <h3 className="font-bold text-3xl text-center py-6">Purchase Coin</h3>
-      <div className="flex gap-4 p-4 justify-center items-center">
+      <div className="flex lg:flex-row flex-col gap-4 lg:p-4 p-2 justify-center items-center">
         <Link to={`/dashboard/payment/${1}`}>
         <div className="card bg-base-300 shadow-xl">
           <div className="card-body text-center font-bold text-3xl">

@@ -47,7 +47,7 @@ const Login = () => {
       }
 
     return (
-        <div className='flex gap-4'>
+        <div className='lg:flex gap-4'>
         <div className='flex-1'>
         <form onSubmit={handleSubmit(onSubmit)} className="card-body mx-auto pt-2">
             <h3 className="text-center font-bold text-3xl pt-4">Login Now</h3>

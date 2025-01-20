@@ -18,26 +18,26 @@ const Dashboard = () => {
         <div>
             <DasNavbar></DasNavbar>
          <div className="flex">
-         <div className="w-1/6 min-h-screen bg-amber-200 text-center py-4"> 
-               <ul>
+         <div className="lg:w-1/6 min-h-screen bg-amber-200 text-center lg:py-4"> 
+               <ul className="space-y-2">
                {
-                role?.role === 'worker' && <> <NavLink to='/dashboard/workerHome'><p className="flex items-center gap-1 justify-center"><IoMdHome /> Home</p></NavLink>
-                <NavLink to='/dashboard/taskList'><p className="flex items-center gap-1 justify-center"><FaTasks /> TaskList</p></NavLink>
-                <NavLink to='/dashboard/mySubmission'><p className="flex items-center gap-1 justify-center"><FaFileUpload /> My Submissions</p></NavLink>
-                <NavLink to='/dashboard/withdrawals'><p className="flex items-center gap-1 justify-center"><BiMoneyWithdraw /> Withdrawals</p></NavLink></>
+                role?.role === 'worker' && <> <NavLink to='/dashboard/workerHome' className="flex items-center gap-1 justify-center"><IoMdHome /> Home</NavLink>
+                <NavLink to='/dashboard/taskList' className="flex items-center gap-1 justify-center"><FaTasks /> TaskList</NavLink>
+                <NavLink to='/dashboard/mySubmission' className="flex items-center gap-1 justify-center"><FaFileUpload /> My Submissions</NavLink>
+                <NavLink to='/dashboard/withdrawals' className="flex items-center gap-1 justify-center"><BiMoneyWithdraw /> Withdrawals</NavLink></>
                }
                {
-                role?.role === 'buyer' && <><NavLink to='/dashboard/buyerHome'><p className="flex items-center gap-1 justify-center"><IoMdHome /> Home</p></NavLink>
-                <NavLink to='/dashboard/addTasks'><p className="flex items-center gap-1 justify-center">
-                <IoMdAddCircleOutline /> Add New Tasks</p></NavLink>
-                <NavLink to='/dashboard/myTasks'><p className="flex items-center gap-1 justify-center"><MdTaskAlt /> My Task's</p></NavLink>
-                <NavLink to='/dashboard/purchaseCoin'><p className="flex items-center gap-1 justify-center"><BsCoin /> Purchase Coin</p></NavLink>
-                <NavLink to='/dashboard/paymentHistory'><p className="flex items-center gap-1 justify-center"><FaSackDollar /> Payment History</p></NavLink></>
+                role?.role === 'buyer' && <><NavLink to='/dashboard/buyerHome' className="flex items-center gap-1 justify-center"><IoMdHome /> Home</NavLink>
+                <NavLink to='/dashboard/addTasks' className="flex items-center gap-1 justify-center">
+                <IoMdAddCircleOutline /> Add New Tasks</NavLink>
+                <NavLink to='/dashboard/myTasks' className="flex items-center gap-1 justify-center"><MdTaskAlt /> My Task's</NavLink>
+                <NavLink to='/dashboard/purchaseCoin' className="flex items-center gap-1 justify-center"><BsCoin /> Purchase Coin</NavLink>
+                <NavLink to='/dashboard/paymentHistory' className="flex items-center gap-1 justify-center"><FaSackDollar /> Payment History</NavLink></>
                }
                 {
-                    role?.role === 'admin' && <> <NavLink to='/dashboard/adminHome'><p className="flex items-center gap-1 justify-center"><IoMdHome></IoMdHome>Home</p></NavLink>
-                    <NavLink to='/dashboard/manageUsers'><p className="flex items-center gap-1 justify-center"><FaUsers></FaUsers>Manage Users</p></NavLink>
-                <NavLink to='/dashboard/taskHistory'><p className="flex items-center gap-1 justify-center"><FaHistory></FaHistory>Manage Task History</p></NavLink></>
+                    role?.role === 'admin' && <> <NavLink to='/dashboard/adminHome' className="flex items-center gap-1 justify-center"><IoMdHome></IoMdHome>Home</NavLink>
+                    <NavLink to='/dashboard/manageUsers' className="flex items-center gap-1 justify-center"><FaUsers></FaUsers>Manage Users</NavLink>
+                <NavLink to='/dashboard/taskHistory' className="flex items-center gap-1 justify-center"><FaHistory></FaHistory>Manage Task History</NavLink></>
                 }
                </ul>
             </div>

@@ -16,14 +16,14 @@ const DasNavbar = () => {
             <Link to="/"><button className="font-bold text-xl">PaidWork</button></Link>
             </div>
         </div>
-        <div className="navbar-end flex gap-6 items-center font-bold">
-         <div>
-          <p>Available Coin: {role?.coin}</p>
-          <p>Role: {role?.role}</p>
+        <div className="navbar-end flex lg:gap-6 gap-2 items-center font-bold">
+         <div className='flex flex-col gap-2'>
+          <p className='btn btn-sm'>Coin: {role?.coin}</p>
+          <p className='btn btn-sm'>Role: {role?.role}</p>
          </div>
-         <div>
+         <div className='flex flex-col gap-2'>
          <img className='h-10 w-10 rounded-full mx-auto' src={role?.photo} alt="" />
-         <p>Name: {role?.name}</p>
+         <p className='btn btn-sm'>{role?.name}</p>
          </div>
           <button className="btn btn-ghost btn-circle">
             <div className="indicator">

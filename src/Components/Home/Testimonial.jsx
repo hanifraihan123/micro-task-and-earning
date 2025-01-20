@@ -28,43 +28,25 @@ const Testimonial = () => {
           <div className="subtitle pb-4" data-swiper-parallax="-200"><img className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/SwBcnbS/IMG-20211216-170815.jpg" alt="" /></div>
           <div className="text px-16 pb-4" data-swiper-parallax="-100">
             <p><span className="font-bold">Experiences: </span> 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            "Micro Task and Earning has been a life-changing experience for me. As a freelancer, I was constantly looking for platforms where I could find quick and reliable gigs. What stood out to me was how intuitive the platform is; the tasks are easy to understand, and the earning potential is great."
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="py-6">
-          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Md Raihan</div>
-          <div className="subtitle pb-4" data-swiper-parallax="-200"><img className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/SwBcnbS/IMG-20211216-170815.jpg" alt="" /></div>
+          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Alex Johnson</div>
+          <div className="subtitle pb-4" data-swiper-parallax="-200"><img className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/bBKbs5n/human-facial-expressions-reaction-body-language.jpg" alt="" /></div>
           <div className="text px-16 pb-4" data-swiper-parallax="-100">
             <p><span className="font-bold">Experiences: </span> 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            "Being a college student, it’s hard to find a side hustle that fits into my busy schedule, but Micro Tak and Earning made it possible. The platform is user-friendly, and the tasks don’t feel like a burden—they’re engaging and worth the time. In just three months, I’ve not only earned money but also gained valuable skills that I can add to my resume."
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide className="py-6">
-          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Md Raihan</div>
-          <div className="subtitle pb-4" data-swiper-parallax="-200"><img className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/SwBcnbS/IMG-20211216-170815.jpg" alt="" /></div>
+          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Priya Mehta</div>
+          <div className="subtitle pb-4" data-swiper-parallax="-200"><img className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/cxLDkzX/young-woman-wearing-red-shirt.jpg" alt="" /></div>
           <div className="text px-16 pb-4" data-swiper-parallax="-100">
             <p><span className="font-bold">Experiences: </span> 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            "As a stay-at-home mom, finding flexible and meaningful work has always been a challenge. Micro Tak and Earning has been a game-changer for me. The tasks are straightforward, and I can complete them whenever I find a spare moment. Over the past year, I’ve been able to earn enough to contribute to family expenses, and that feeling of independence is priceless."
             </p>
           </div>
         </SwiperSlide>

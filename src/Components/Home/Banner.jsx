@@ -46,25 +46,21 @@ const Banner = () => {
     </div>
   </Carousel> */}
   <Swiper
-        // spaceBetween={30}
-        // centeredSlides={true}
-        // autoplay={{
-        //   delay: 3500,
-        //   disableOnInteraction: false,
-        // }}
-        // pagination={{
-        //   clickable: true,
-        // }}
-        // navigation={true}
-        // modules={[Autoplay, Pagination, Navigation]}
-        // className="mySwiper"
-        cssMode={true}
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
         navigation={true}
-        pagination={true}
+        className="mySwiper"
+        cssMode={true}
         mousewheel={true}
         keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper"
+        modules={[Navigation,Autoplay, Pagination, Mousewheel, Keyboard]}
       >
         <SwiperSlide><div><img className='object-cover h-[440px] w-full' src={img1} alt="" /></div></SwiperSlide>
         <SwiperSlide><div><img className='object-cover h-[440px] w-full' src={img2} alt="" /></div></SwiperSlide>

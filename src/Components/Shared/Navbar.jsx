@@ -28,7 +28,8 @@ const Navbar = () => {
     // </>
 
     return (
-        <div className="navbar bg-lime-200 py-3">
+      <>
+      <div className="navbar bg-lime-200">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -47,8 +48,8 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2 btn">Join as Developer</a></li>
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow">
+          <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2 btn">Join as Developer</a>
         {
           user && <>
           <NavLink to="dashboard" className="mr-2 btn">Dashboard</NavLink>
@@ -57,7 +58,7 @@ const Navbar = () => {
         }
       </ul>
     </div>
-    <Link to="/"><button className="font-bold text-xl pl-4">PaidWork</button></Link>
+    <Link to='/'><h3 className="text-xl btn bg-yellow-500">PaidWork</h3></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -70,13 +71,14 @@ const Navbar = () => {
         }
     </ul>
   </div>
-  <div className="navbar-end flex gap-2">
+  <div className="navbar-end">
   {
-    user ? <div className="flex items-center gap-4"><img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" /> <button onClick={handleLogout} className="btn btn-warning">Logout</button></div> :<><Link to="/login"><button className="btn btn-warning">Login</button></Link>
+    user ? <div className="flex items-center gap-4"><img className="h-12 w-12 rounded-full" src={user?.photoURL} alt="" /> <button onClick={handleLogout} className="btn btn-warning">Logout</button></div> :<><Link to="/login"><button className="btn btn-warning mr-2">Login</button></Link>
   <Link to="/register"><button className="btn btn-warning">Register</button></Link></>
   }
   </div>
 </div>
+      </>
     );
 };
 

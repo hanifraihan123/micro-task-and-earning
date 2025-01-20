@@ -77,7 +77,7 @@ const AddTasks = () => {
           </label>
           <input type="text" {...register("details")} placeholder="Enter Description" className="input input-bordered" required />
         </div>
-       <div className="flex gap-4">
+       <div className="lg:flex gap-4">
        <div className="form-control w-full">
           <label className="label">
             <span className="label-text">Required Workers</span>
@@ -91,32 +91,32 @@ const AddTasks = () => {
           <input type="number" {...register("amount")} placeholder="Enter Amount" className="input input-bordered" required />
         </div>
        </div>
-        <div className="flex gap-4">
-        <div className="w-1/3">
+        <div className="lg:flex gap-4">
+        <div className="lg:w-1/3">
         <label className="label">
             <span className="label-text">Deadline</span>
           </label>
         <DatePicker className="input input-bordered" selected={startDate} onChange={(date) => setStartDate(date)} />
         </div>
-        <div className="w-1/3">
+        <div className="lg:w-1/3">
         <label className="label">
             <span className="label-text">Submission Info</span>
           </label>
         <select defaultValue='default' {...register("info")} className="select select-bordered w-full">
-  <option disabled value="default">Who shot first?</option>
+  <option disabled value="default">Select One</option>
   <option>Screenshot</option>
   <option>Image</option>
   <option>Text</option>
 </select>
         </div>
-        <div>
+        <div className="">
         <label className="label">
             <span className="label-text">Image URL</span>
           </label>
-        <input type="file" {...register("image")} className="file-input file-input-bordered" />
+        <input type="file" {...register("image")} className="lg:file-input file-input-bordered" />
         </div>
         </div>
-        <div className="form-control mt-6">
+        <div className="form-control lg:mt-6 mt-2">
           <button className="btn btn-primary">Add Task</button>
         </div>
       </form>
