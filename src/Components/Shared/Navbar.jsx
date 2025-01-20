@@ -17,15 +17,15 @@ const Navbar = () => {
     })
   }
 
-    const links = <>
-        <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2 btn">Join as Developer</a>
-        {
-          user && <>
-          <NavLink to="dashboard" className="mr-2 btn">Dashboard</NavLink>
-          <button className="btn bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </button>
-          </>
-        }
-    </>
+    // const links = <>
+    //     <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2 btn">Join as Developer</a>
+    //     {
+    //       user && <>
+    //       <NavLink to="dashboard" className="mr-2 btn">Dashboard</NavLink>
+    //       <button className="btn bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </button>
+    //       </>
+    //     }
+    // </>
 
     return (
         <div className="navbar bg-lime-200 py-3">
@@ -48,14 +48,26 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        {links}
+        <li><a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2 btn">Join as Developer</a></li>
+        {
+          user && <>
+          <NavLink to="dashboard" className="mr-2 btn">Dashboard</NavLink>
+          <button className="btn bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </button>
+          </>
+        }
       </ul>
     </div>
     <Link to="/"><button className="font-bold text-xl pl-4">PaidWork</button></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-     {links}
+    <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2 btn">Join as Developer</a>
+        {
+          user && <>
+          <NavLink to="dashboard" className="mr-2 btn">Dashboard</NavLink>
+          <button className="btn bg-yellow-500 text-white"><AiTwotoneDollarCircle /> {role?.coin} </button>
+          </>
+        }
     </ul>
   </div>
   <div className="navbar-end flex gap-2">

@@ -55,7 +55,7 @@ const TaskDetails = () => {
     <p>Amount: {task.amount}</p>
     <p>Buyer Name: {task.name}</p>
     <p>Buyer Email: {task.email}</p>
-    <p>Deadline: {format(new Date(task.deadline), 'PP')}</p>
+    <p>Deadline: {task.deadline && format(new Date(task.deadline), 'PP')}</p>
     <form onSubmit={handleSubmit} className="form-control space-y-2">
     <span className="label-text">Submission Details:</span>
     <textarea name="details"

@@ -16,7 +16,7 @@ const TaskList = () => {
         tasks.map(task=><div key={task._id} task={task} className="card bg-yellow-100 mx-4 my-6 shadow-xl">
             {task.workers > 0 && <div className="card-body">
               <h2 className="card-title">Title: {task.title}</h2>
-              <p>Buyer Email: {task.email}</p>
+              <p>Buyer Name: {task.name}</p>
               <p>Deadline: {format(new Date(task.deadline), 'PP')}</p>
               <p>Payable Amount: {task.amount}</p>
               <p>Required Workers: {task.workers}</p>

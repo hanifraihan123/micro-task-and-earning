@@ -5,11 +5,10 @@ import LoadingSpinner from '../Shared/LoadingSpinner';
 
 const DasNavbar = () => {
 
-  const {role,refetch,isLoading} = useRole();
+  const {role,isLoading} = useRole();
   if(isLoading){
     <LoadingSpinner></LoadingSpinner>
   }
-  refetch();
     return (
         <div className="navbar bg-lime-200">
         <div className="navbar-start">

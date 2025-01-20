@@ -3,10 +3,12 @@ import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import useRole from "../Hooks/useRole";
 
 const MyTasks = () => {
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
+  const {role,refetch: update} = useRole();
   const [task, setTask] = useState({});
   const [infos, setInfos] = useState(task.info);
   const { data: tasks = [], refetch } = useQuery({
@@ -40,10 +42,17 @@ const MyTasks = () => {
   };
 
   const handleDelete = async (id) => {
-    const res = await axiosSecure.delete(`/task/${id}`);
-    if (res.data.deletedCount > 0) {
-      refetch();
-      toast.success("Task Deleted Successfully");
+    const result = await axiosSecure.get(`/task/${id}`)
+    const amount =  result.data.amount;
+    const response = await axiosSecure.patch(`/increaseCoin/${user?.email}`, {amount})
+    if(response.data.modifiedCount > 0){
+      refetch()
+      const res = await axiosSecure.delete(`/task/${id}`);
+      if (res.data.deletedCount > 0) {
+        refetch();
+        update();
+        toast.success("Task Deleted Successfully");
+      }
     }
   };
 

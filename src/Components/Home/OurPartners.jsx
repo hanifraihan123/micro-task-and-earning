@@ -2,8 +2,8 @@ const OurPartners = () => {
   return (
     <div className="bg-orange-300">
       <h3 className="font-bold text-3xl text-center py-6">Our Partners</h3>
-      <div className="flex gap-4 items-center justify-center">
-        <div className="w-1/3">
+      <div className="lg:flex gap-4 items-center justify-center">
+        <div className="lg:w-1/3 pb-4">
           <h4 className="font-bold text-center text-2xl pb-4">
             We Value Our Sponsors
           </h4>
@@ -15,7 +15,7 @@ const OurPartners = () => {
             situation
           </p>
         </div>
-        <div className="w-1/3 pr-10 pb-10">
+        <div className="lg:w-1/3 lg:pr-10 px-4 pb-10">
           <div className="card bg-orange-100 shadow-xl">
             <figure className="p-10">
               <img
@@ -26,7 +26,7 @@ const OurPartners = () => {
             </figure>
           </div>
         </div>
-        <div className="w-1/3 pr-10 pb-10">
+        <div className="lg:w-1/3 lg:pr-10 px-4 pb-10">
           <div className="card bg-orange-100 shadow-xl">
             <figure className="p-10">
               <img
