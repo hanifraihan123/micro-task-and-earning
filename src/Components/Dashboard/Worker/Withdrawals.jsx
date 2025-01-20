@@ -40,16 +40,16 @@ const Withdrawals = () => {
 
     return (
         <div>
-            <h3 className="font-bold text-3xl text-center py-6">Withdrawals Form</h3>
-            <p className="pl-8 font-bold">Available Coin: {role?.coin}</p>
-            <p className="pl-8 font-bold">Possible Withdrawal Amount: {role?.coin/20} $</p>
+            <h3 className="font-bold text-2xl text-center py-4">Withdrawals Form</h3>
+            <p className="text-center font-bold mb-2">Available Coin: {role?.coin}</p>
+            <p className="text-center font-bold">Possible Withdrawal Amount: {role?.coin/20} $</p>
              <form onSubmit={handleSubmit(onSubmit)} className="card-body pt-0">
-                <div className="flex gap-4">
+                <div className="lg:flex gap-4">
                 <div className="form-control w-full">
                       <label className="label">
                         <span className="label-text">Coin To Withdraw</span>
                       </label>
-                      <input type="number" {...register("withdraw")} onChange={(e)=>handleCoin(e.target.value)} placeholder="Minimum 200 Coins Need To Withdraw" className="input input-bordered" required />
+                      <input type="number" {...register("withdraw")} onChange={(e)=>handleCoin(e.target.value)} placeholder="Min 200 Coins Need To Withdraw" className="input input-bordered" required />
                     </div>
                     <div className="form-control w-full">
                       <label className="label">
@@ -58,7 +58,7 @@ const Withdrawals = () => {
                       <input type="text" disabled value={`${dollar} $`} className="input input-bordered" />
                     </div>
                     </div>      
-                   <div className="flex gap-4">
+                   <div className="lg:flex gap-4">
                    <div className="form-control w-full">
                       <label className="label">
                         <span className="label-text">Account Number</span>

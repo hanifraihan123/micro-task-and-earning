@@ -23,7 +23,7 @@ const DasNavbar = () => {
          </div>
          <div className='flex flex-col gap-2'>
          <img className='h-10 w-10 rounded-full mx-auto' src={role?.photo} alt="" />
-         <p className='btn btn-sm'>{role?.name}</p>
+         <p className='btn'>{role?.name}</p>
          </div>
           <button className="btn btn-ghost btn-circle">
             <div className="indicator">

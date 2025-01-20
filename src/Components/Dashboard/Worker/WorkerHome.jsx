@@ -21,8 +21,8 @@ const WorkerHome = () => {
 
     return (
         <div>
-            <h3 className="font-bold text-3xl text-center py-6">Total Submissions: {submissions?.length}</h3>
-            <div className="flex gap-3 justify-between px-4 pb-4">
+            <h3 className="font-bold text-2xl text-center py-6">Total Submissions: {submissions?.length}</h3>
+            <div className="flex lg:flex-row flex-col gap-3 lg:justify-between justify-center lg:px-4 pb-4">
             <span className="font-bold text-xl text-center text-blue-500">Pending Submissions: {pendingData?.length}</span>
             <span className="font-bold text-xl text-center text-yellow-500">Payable Amount: {payableAmount}</span>
             <span className="font-bold text-xl text-center text-red-500">Rejected Submissions: {rejectedData?.length}</span>
@@ -33,7 +33,6 @@ const WorkerHome = () => {
     {/* head */}
     <thead>
       <tr>
-        <th>Serial</th>
         <th>Task Title</th>
         <th>Payable Amount</th>
         <th>Buyer Name</th>
@@ -42,8 +41,7 @@ const WorkerHome = () => {
     </thead>
     <tbody>
       {
-        actualData.map((submit,index)=><tr key={submit._id}>
-            <th>{index + 1}</th>
+        actualData.map((submit)=><tr key={submit._id}>
             <td>{submit.taskTitle}</td>
             <td>{submit.amount}</td>
             <td>{submit.buyerName}</td>

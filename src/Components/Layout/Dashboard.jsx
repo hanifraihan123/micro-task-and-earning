@@ -41,7 +41,7 @@ const Dashboard = () => {
                 }
                </ul>
             </div>
-            <div className="w-5/6">
+            <div className="w-5/6 bg-red-200">
                 <Outlet></Outlet>
             </div>
          </div>
