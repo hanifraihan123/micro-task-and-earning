@@ -38,7 +38,7 @@ const Testimonial = () => {
         <SwiperSlide className="py-6">
           <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Alex Johnson</div>
           <div className="subtitle pb-4" data-swiper-parallax="-200"><motion.img whileHover={{ scale: 1.3 }}
-  whileTap={{ scale: 0.95 }} className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/bBKbs5n/human-facial-expressions-reaction-body-language.jpg" alt="" /></div>
+  whileTap={{ scale: 0.95 }} className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/k2R4RWxQ/irene-strong-v2a-Knj-Mb-P-k-unsplash.jpg" alt="" /></div>
           <div className="text px-16 pb-4" data-swiper-parallax="-100">
             <p><span className="font-bold">Experiences: </span> 
             "Being a college student, it’s hard to find a side hustle that fits into my busy schedule, but Micro Tak and Earning made it possible. The platform is user-friendly, and the tasks don’t feel like a burden—they’re engaging and worth the time. In just three months, I’ve not only earned money but also gained valuable skills that I can add to my resume."
@@ -48,7 +48,7 @@ const Testimonial = () => {
         <SwiperSlide className="py-6">
           <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Priya Mehta</div>
           <div className="subtitle pb-4" data-swiper-parallax="-200"><motion.img whileHover={{ scale: 1.3 }}
-  whileTap={{ scale: 0.95 }} className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/cxLDkzX/young-woman-wearing-red-shirt.jpg" alt="" /></div>
+  whileTap={{ scale: 0.95 }} className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/rK7nFtmY/brooke-cagle-h-Hc-Hf4m-OFgk-unsplash.jpg" alt="" /></div>
           <div className="text px-16 pb-4" data-swiper-parallax="-100">
             <p><span className="font-bold">Experiences: </span> 
             "As a stay-at-home mom, finding flexible and meaningful work has always been a challenge. Micro Tak and Earning has been a game-changer for me. The tasks are straightforward, and I can complete them whenever I find a spare moment. Over the past year, I’ve been able to earn enough to contribute to family expenses, and that feeling of independence is priceless."

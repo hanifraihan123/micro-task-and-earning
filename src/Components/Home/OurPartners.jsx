@@ -21,7 +21,7 @@ const OurPartners = () => {
           <div className="card bg-orange-100 shadow-xl">
             <figure className="p-10">
               <motion.img initial={{ scale: 0 }} animate={{ scale: 1 }}
-                src="https://i.ibb.co.com/z4J0TjM/boss-approving-congratulating-young-successful-employee.jpg"
+                src="https://i.ibb.co.com/G49XkLmP/fran-innocenti-I-Lx-DFIIRIA-unsplash.jpg"
                 alt="Shoes"
                 className="rounded-xl"
               />
@@ -32,7 +32,7 @@ const OurPartners = () => {
           <div className="card bg-orange-100 shadow-xl">
             <figure className="p-10">
               <img
-                src="https://i.ibb.co.com/vL1s359/welcome-tell-us-something-about-your-work-experience.jpg"
+                src="https://i.ibb.co.com/RJTSscd/toni-koraza-mgb8o-LBKIqw-unsplash.jpg"
                 alt="Shoes"
                 className="rounded-xl"
               />

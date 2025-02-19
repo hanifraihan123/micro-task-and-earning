@@ -25,7 +25,7 @@ const TaskList = () => {
               <p>Payable Amount: {task.amount}</p>
               <p>Required Workers: {task.workers}</p>
               <div className="card-actions justify-center">
-               <Link to={`/dashboard/taskDetails/${task._id}`}><button className="btn btn-primary">View Details</button></Link>
+               <Link to={`/dashboard/taskDetails/${task._id}`}><button className="btn btn-secondary">View Details</button></Link>
               </div>
             </div>}
           </div>)

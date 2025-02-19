@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
@@ -11,6 +11,7 @@ const TaskDetails = () => {
 
     const {id} = useParams();
     const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
     const {user} = useAuth();
     const {data: task = {}} = useQuery({
         queryKey: ['task'],
@@ -40,6 +41,7 @@ const TaskDetails = () => {
         const res = await axiosSecure.post('/submission', submissionInfo)
         if(res.data.insertedId){
             toast.success('Task Form Submited Successfully')
+            setTimeout(()=>{navigate('/dashboard/mySubmission')},2000)
         }
     }
 

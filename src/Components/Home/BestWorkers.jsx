@@ -20,7 +20,7 @@ const BestWorkers = () => {
         users.map(user=> <div key={user._id} user={user} className="card bg-lime-100 shadow-xl">
           <div className="card-body">
             <figure className="rounded-xl">
-              <motion.img whileHover={{ scale: 1.3 }}
+              <motion.img whileHover={{ scale: 1.2 }}
   whileTap={{ scale: 0.95 }}
                 src={user.photo}
                 alt="Shoes"
