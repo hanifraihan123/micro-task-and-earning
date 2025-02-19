@@ -2,10 +2,10 @@ import { motion } from "motion/react"
 
 const OurPartners = () => {
   return (
-    <div className="bg-orange-300">
+    <div className="bg-lime-200">
       <h3 className="font-bold text-3xl text-center py-6">Our Partners</h3>
-      <div className="lg:flex gap-4 items-center justify-center">
-        <div className="lg:w-1/3 pb-4">
+      <div className="lg:flex gap-4 items-center">
+        <div className="pb-4 flex-1">
           <h4 className="font-bold text-center text-2xl pb-4">
             We Value Our Sponsors
           </h4>
@@ -17,8 +17,8 @@ const OurPartners = () => {
             situation
           </p>
         </div>
-        <div className="lg:w-1/3 lg:pr-10 px-4 pb-10">
-          <div className="card bg-orange-100 shadow-xl">
+        <div className="lg:pr-10 flex-1 px-4 pb-10">
+          <div className="card bg-blue-100 shadow-xl">
             <figure className="p-10">
               <motion.img initial={{ scale: 0 }} animate={{ scale: 1 }}
                 src="https://i.ibb.co.com/G49XkLmP/fran-innocenti-I-Lx-DFIIRIA-unsplash.jpg"
@@ -28,8 +28,8 @@ const OurPartners = () => {
             </figure>
           </div>
         </div>
-        <div className="lg:w-1/3 lg:pr-10 px-4 pb-10">
-          <div className="card bg-orange-100 shadow-xl">
+        <div className="lg:pr-10 flex-1 px-4 pb-10">
+          <div className="card bg-blue-100 shadow-xl">
             <figure className="p-10">
               <img
                 src="https://i.ibb.co.com/RJTSscd/toni-koraza-mgb8o-LBKIqw-unsplash.jpg"

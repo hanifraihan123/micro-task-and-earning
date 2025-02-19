@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 
 const Testimonial = () => {
   return (
-    <div className="bg-green-200 pt-4">
+    <div className="bg-lime-200 pt-4 px-4">
       <motion.h3 animate={{ rotate: 360 }}
             transition={{ duration: 10 }} className="font-bold text-3xl text-center pb-2">Testimonial</motion.h3>
       <Swiper

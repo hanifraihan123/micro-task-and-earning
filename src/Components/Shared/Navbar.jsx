@@ -10,6 +10,7 @@ const Navbar = () => {
 
   const {user,userLogout} = useAuth();
   const {role} = useRole();
+  // console.log(role)
 
   const handleLogout = () => {
     userLogout()
@@ -20,7 +21,7 @@ const Navbar = () => {
 
     return (
       <>
-      <div className="navbar bg-lime-200">
+      <div className="navbar bg-gradient-to-r from-lime-300 to-blue-300 mb-8 px-4 fixed z-10">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,10 +53,17 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-    <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2 btn">Join as Developer</a>
+    <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2">Join as Developer</a>
+    {
+      role?.role === "worker" && <>
+      <NavLink to="dashboard/taskList" className="mr-2">Tasklist</NavLink>
+      <NavLink to="dashboard/mySubmission" className="mr-2">My Submissions</NavLink>
+      <NavLink to="dashboard/workerHome" className="mr-2">Worker Home</NavLink>
+      </>
+    }
         {
           user && <>
-          <NavLink to="dashboard" className="btn">Dashboard</NavLink>
+          <NavLink to="dashboard" className="">Dashboard</NavLink>
           </>
         }
     </ul>

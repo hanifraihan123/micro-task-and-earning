@@ -5,6 +5,7 @@ import OurPartners from "./OurPartners";
 import Statistics from "./Statistics";
 import Testimonial from "./Testimonial";
 import WhyYou from "./WhyYou";
+import Featured from "./Featured";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <BestWorkers></BestWorkers>
       <Testimonial></Testimonial>
       <Statistics></Statistics>
+      <Featured></Featured>
       <OurPartners></OurPartners>
       <WhyYou></WhyYou>
     </div>

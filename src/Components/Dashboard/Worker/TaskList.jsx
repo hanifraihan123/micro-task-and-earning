@@ -7,8 +7,6 @@ const TaskList = () => {
 
     const [tasks] = useTasks();
     
-    
-
   return (
     <div>
                    <Helmet>

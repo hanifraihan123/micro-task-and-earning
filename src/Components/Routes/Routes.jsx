@@ -89,7 +89,7 @@ export const router = createBrowserRouter([
         },
         {
           path: 'taskDetails/:id',
-          element: <WorkerRoute><TaskDetails></TaskDetails></WorkerRoute>
+          element: <TaskDetails></TaskDetails>
         },
         {
           path: 'mySubmission',
