@@ -6,6 +6,7 @@ import Statistics from "./Statistics";
 import Testimonial from "./Testimonial";
 import WhyYou from "./WhyYou";
 import Featured from "./Featured";
+import ExtraSection from "./ExtraSection";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Testimonial></Testimonial>
       <Statistics></Statistics>
       <Featured></Featured>
+      <ExtraSection></ExtraSection>
       <OurPartners></OurPartners>
       <WhyYou></WhyYou>
     </div>

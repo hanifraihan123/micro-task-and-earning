@@ -54,13 +54,10 @@ const Navbar = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
     <a href="https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-hanifraihan123" className="text-blue-700 mr-2">Join as Developer</a>
-    {
-      role?.role === "worker" && <>
       <NavLink to="dashboard/taskList" className="mr-2">Tasklist</NavLink>
       <NavLink to="dashboard/mySubmission" className="mr-2">My Submissions</NavLink>
       <NavLink to="dashboard/workerHome" className="mr-2">Worker Home</NavLink>
-      </>
-    }
+  
         {
           user && <>
           <NavLink to="dashboard" className="">Dashboard</NavLink>
