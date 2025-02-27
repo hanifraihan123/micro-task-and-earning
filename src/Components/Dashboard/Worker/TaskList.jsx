@@ -12,10 +12,10 @@ const TaskList = () => {
         <title>PaidWork || TaskList</title>
       </Helmet>
       <h3 className="font-bold text-3xl text-center py-6">
-        Task List: {tasks.length}
+        Task List: {tasks?.length}
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-        {tasks.map((task) => (
+        {tasks?.map((task) => (
           <div
             key={task._id}
             task={task}

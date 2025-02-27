@@ -10,7 +10,7 @@ const ExtraSection = () => {
                 <div className="flex gap-2 items-center justify-center"><img className="h-12 w-24" src="https://i.ibb.co.com/v6HSbBJ4/google-tasks-logo-freelogovectors-net.png" alt="" /><p className="font-bold text-2xl">Data Privacy</p> </div>
                 <div className="flex gap-2 items-center justify-center"><img className="h-12 w-24" src="https://i.ibb.co.com/v6HSbBJ4/google-tasks-logo-freelogovectors-net.png" alt="" /><p className="font-bold text-2xl">Transparent handling of your data</p> </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 pt-16 justify-center">
                 <img src="https://i.ibb.co.com/SXD55PqT/5c81d12ca5c93-Tasks-Management-Logo-Design.jpg" alt="" />
             </div>
         </div>

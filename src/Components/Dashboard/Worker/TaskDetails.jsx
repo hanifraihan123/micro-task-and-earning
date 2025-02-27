@@ -9,12 +9,10 @@ import useAxios from "../../Hooks/useAxios";
 
 const TaskDetails = () => {
   const { id } = useParams();
-  console.log(id)
   const axiosSecure = useAxiosSecure();
   const axiosPublic = useAxios();
   const navigate = useNavigate();
   const { user } = useAuth();
-  console.log(user)
   const { data: task = {} } = useQuery({
     queryKey: ["task"],
     queryFn: async () => {

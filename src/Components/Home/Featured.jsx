@@ -11,7 +11,7 @@ const Featured = () => {
         Featured Task
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-        {tasks.map((task) => (
+        {tasks?.map((task) => (
           <div
             key={task._id}
             task={task}
@@ -25,7 +25,7 @@ const Featured = () => {
                 <p>Payable Amount: {task.amount}</p>
                 <p>Required Workers: {task.workers}</p>
                 <div className="card-actions justify-center">
-                  <Link to={`/dashboard/taskDetails/${task._id}`}>
+                  <Link to={`/dashboard/taskDetails/${task?._id}`}>
                     <button className="btn btn-secondary">View Details</button>
                   </Link>
                 </div>
