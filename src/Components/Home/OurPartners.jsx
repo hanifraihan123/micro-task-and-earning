@@ -2,8 +2,8 @@ import { motion } from "motion/react"
 
 const OurPartners = () => {
   return (
-    <div className="bg-lime-200">
-      <h3 className="font-bold text-3xl text-center py-6">Our Partners</h3>
+    <div className="bg-cyan-500 text-white">
+      <h3 className="font-bold text-3xl text-center py-6 text-lime-100">Our Partners</h3>
       <div className="lg:flex gap-4 items-center">
         <div className="pb-4 flex-1">
           <h4 className="font-bold text-center text-2xl pb-4">

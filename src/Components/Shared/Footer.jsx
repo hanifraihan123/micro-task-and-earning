@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center bg-lime-200 p-10">
+        <footer className="footer footer-center bg-gradient-to-r from-sky-500 to-indigo-500 text-white p-10">
         <aside>
           <svg
             width="50"

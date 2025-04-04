@@ -1,61 +1,81 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Parallax, Pagination, Navigation } from "swiper/modules";
+// import { Parallax, Pagination, Navigation } from "swiper/modules";
 import { motion } from "motion/react"
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import 'swiper/css/free-mode';
+
+// import required modules
+// import { FreeMode, Pagination } from 'swiper/modules';
+
+import 'swiper/css/effect-coverflow';
+import '../Home/styles.css'
+
+// import required modules
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 const Testimonial = () => {
   return (
-    <div className="bg-lime-200 pt-4 px-4">
-      <motion.h3 animate={{ rotate: 360 }}
-            transition={{ duration: 10 }} className="font-bold text-3xl text-center pb-2">Testimonial</motion.h3>
+    <div className="pt-8">
+      <h3 className="font-bold text-3xl text-center text-lime-100">Testimonial</h3>
       <Swiper
-        style={{
-          "--swiper-navigation-color": "blue",
-          "--swiper-pagination-color": "blue",
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
         }}
-        speed={600}
-        parallax={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Parallax, Pagination, Navigation]}
-        className="mySwiper"
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper my-10"
       >
-        <SwiperSlide className="py-6">
-          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Md Raihan</div>
-          <div className="subtitle pb-4" data-swiper-parallax="-200"><motion.img whileHover={{ scale: 1.3 }}
-  whileTap={{ scale: 0.95 }} className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/SwBcnbS/IMG-20211216-170815.jpg" alt="" /></div>
-          <div className="text px-16 pb-4" data-swiper-parallax="-100">
+        <SwiperSlide>
+          <div className="bg-slate-100 shadow-xl p-2 rounded-lg">
+          <div className="flex gap-2 items-center pb-4">
+            <div className="h-12 w-12">
+          <img className="rounded-lg" src="https://i.ibb.co.com/SwBcnbS/IMG-20211216-170815.jpg" alt="" />
+            </div>
+          <h5 className="title text-center"><span className="font-bold">Name:</span> Md Raihan</h5>
+          </div>
             <p><span className="font-bold">Experiences: </span> 
-            "Micro Task and Earning has been a life-changing experience for me. As a freelancer, I was constantly looking for platforms where I could find quick and reliable gigs. What stood out to me was how intuitive the platform is; the tasks are easy to understand, and the earning potential is great."
+            "Micro Task and Earning has been a life-changing experience for me. As a freelancer, I was constantly looking for platforms where I could find quick and reliable gigs."
             </p>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="py-6">
-          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Alex Johnson</div>
-          <div className="subtitle pb-4" data-swiper-parallax="-200"><motion.img whileHover={{ scale: 1.3 }}
-  whileTap={{ scale: 0.95 }} className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/k2R4RWxQ/irene-strong-v2a-Knj-Mb-P-k-unsplash.jpg" alt="" /></div>
-          <div className="text px-16 pb-4" data-swiper-parallax="-100">
+        <SwiperSlide>
+          <div className="bg-slate-100 shadow-xl p-2 rounded-lg">
+          <div className="flex gap-2 items-center pb-4">
+            <div className="h-12 w-12">
+          <img className="rounded-lg" src="https://i.ibb.co.com/Fkd1qHRm/images-9.jpg" alt="" />
+            </div>
+          <div><span className="font-bold">Name:</span> Priya Mehta</div>
+          </div>
             <p><span className="font-bold">Experiences: </span> 
-            "Being a college student, it’s hard to find a side hustle that fits into my busy schedule, but Micro Tak and Earning made it possible. The platform is user-friendly, and the tasks don’t feel like a burden—they’re engaging and worth the time. In just three months, I’ve not only earned money but also gained valuable skills that I can add to my resume."
+            "Being a college student, it’s hard to find a side hustle that fits into my busy schedule, but Micro Task and Earning made it possible. The platform is user-friendly, they’re engaging and worth the time."
             </p>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="py-6">
-          <div className="title text-center pb-4" data-swiper-parallax="-300"><span className="font-bold">Name:</span> Priya Mehta</div>
-          <div className="subtitle pb-4" data-swiper-parallax="-200"><motion.img whileHover={{ scale: 1.3 }}
-  whileTap={{ scale: 0.95 }} className="h-24 w-24 mx-auto rounded-full" src="https://i.ibb.co.com/rK7nFtmY/brooke-cagle-h-Hc-Hf4m-OFgk-unsplash.jpg" alt="" /></div>
-          <div className="text px-16 pb-4" data-swiper-parallax="-100">
+        <SwiperSlide>
+          <div className="bg-slate-100 shadow-xl p-2 rounded-lg">
+          <div className="flex gap-2 items-center pb-4">
+            <div className="h-12 w-12">
+          <img className="rounded-lg" src="https://i.ibb.co.com/bMXJw8xz/images-7.jpg" alt="" />
+            </div>
+          <h5><span className="font-bold">Name:</span> Alex Johnson</h5>
+          </div>
             <p><span className="font-bold">Experiences: </span> 
-            "As a stay-at-home mom, finding flexible and meaningful work has always been a challenge. Micro Tak and Earning has been a game-changer for me. The tasks are straightforward, and I can complete them whenever I find a spare moment. Over the past year, I’ve been able to earn enough to contribute to family expenses, and that feeling of independence is priceless."
+            "Micro Task and Earning has been a life-changing experience for me. As a freelancer, I was constantly looking for platforms where I could find quick and reliable gigs."
             </p>
           </div>
         </SwiperSlide>
-
+        
       </Swiper>
     </div>
   );

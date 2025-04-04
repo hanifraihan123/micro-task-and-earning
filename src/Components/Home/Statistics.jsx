@@ -2,8 +2,8 @@
 
 const Statistics = () => {
     return (
-        <div className="text-center py-6 px-4 bg-slate-200">
-            <h3 className="font-bold text-3xl text-center pb-6">Our Statistics</h3>
+        <div className="text-center py-6 px-4 bg-cyan-500">
+            <h3 className="font-bold text-3xl text-center pb-6 text-lime-100">Our Statistics</h3>
             <div className="stats shadow w-full flex lg:flex-row flex-col mb-4">
   <div className="stat">
     <div className="stat-figure text-secondary">
